@@ -1,11 +1,11 @@
 <?PHP
 /*****************************************************************************/
 /*                                                                           */
-/* Ansilove/PHP 1.07 (c) by Frederic Cambus 2003-2009                        */
+/* Ansilove/PHP 1.08 (c) by Frederic Cambus 2003-2011                        */
 /* http://ansilove.sourceforge.net                                           */
 /*                                                                           */
 /* Created:      2003/07/17                                                  */
-/* Last Updated: 2009/06/16                                                  */
+/* Last Updated: 2011/07/08                                                  */
 /*                                                                           */
 /* This program is free software; you can redistribute it and/or modify      */
 /* it under the terms of the GNU General Public License as published by      */
