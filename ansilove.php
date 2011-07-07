@@ -171,6 +171,15 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
    {
       $transparent=1;
    }
+   if ($bits=='workbench')
+   {
+       $workbench=1;
+   }
+   if ($bits=='workbench-transparent')
+   {
+       $workbench=1;
+       $transparent=1;
+   }
    if ($bits!=8 && $bits!=9)
    {
       $bits=8;
@@ -696,13 +705,19 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 
                   if ($ansi_sequence_value==1)
                   {
-                     $color_foreground+=8;
+                     if (!$workbench)
+                     {
+                        $color_foreground+=8;
+					 }
                      $bold=1;
                   }
 
                   if ($ansi_sequence_value==5)
                   {
-                     $color_background+=8;
+                     if (!$workbench)
+                     {
+                        $color_background+=8;
+					 }
                      $blink=1;
                   }
 
@@ -812,6 +827,32 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
       for ($loop=0;$loop<16;$loop++)
       {
          imagecolorset($font,$loop,$ced_foreground_color[0],$ced_foreground_color[1],$ced_foreground_color[2]);
+      }
+   }
+   else if ($workbench)
+   {
+      $workbench_color[0]=explode(",",WORKBENCH_COLOR_0);
+      $workbench_color[1]=explode(",",WORKBENCH_COLOR_4);
+      $workbench_color[2]=explode(",",WORKBENCH_COLOR_2);
+      $workbench_color[3]=explode(",",WORKBENCH_COLOR_6);
+      $workbench_color[4]=explode(",",WORKBENCH_COLOR_1);
+      $workbench_color[5]=explode(",",WORKBENCH_COLOR_5);
+      $workbench_color[6]=explode(",",WORKBENCH_COLOR_3);
+      $workbench_color[7]=explode(",",WORKBENCH_COLOR_7);
+
+      imagecolorallocate($ansi,$workbench_color[0][0],$workbench_color[0][1],$workbench_color[0][2]);
+
+      $workbench_background=imagecolorallocate($ansi,$workbench_color[0][0],$workbench_color[0][1],$workbench_color[0][2]);
+      $workbench_background=imagecolorallocate($background,$workbench_color[0][0],$workbench_color[0][1],$workbench_color[0][2]);
+
+      imagefill($ansi,0,0,$workbench_background);
+
+      for ($loop=0; $loop<8; $loop++)
+      {
+         imagecolorset($background,$loop,$workbench_color[$loop][0],$workbench_color[$loop][1],$workbench_color[$loop][2]);
+         imagecolorset($background,$loop+8,$workbench_color[$loop][0],$workbench_color[$loop][1],$workbench_color[$loop][2]);
+         imagecolorset($font,$loop,$workbench_color[$loop][0],$workbench_color[$loop][1],$workbench_color[$loop][2]);
+         imagecolorset($font,$loop+8,$workbench_color[$loop][0],$workbench_color[$loop][1],$workbench_color[$loop][2]);
       }
    }
    else
