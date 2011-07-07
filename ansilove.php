@@ -197,66 +197,109 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
       break;
 
    case 'amiga':
-      $font_file='ansilove_font_topaz+.png';
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_topaz_1200.png';
       $font_size_x=8;
-      $font_size_y=11;
+      $font_size_y=16;
       $bits=8;
       break;
 
    case 'b-strict':
-      $font_file='ansilove_font_b-strict.png';
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_b-strict.png';
       $font_size_x=8;
       $font_size_y=8;
-      $bits=8;
       break;
 
    case 'b-struct':
-      $font_file='ansilove_font_b-struct.png';
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_b-struct.png';
       $font_size_x=8;
       $font_size_y=8;
-      $bits=8;
       break;
 
    case 'microknight':
-      $font_file='ansilove_font_microknight.png';
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_microknight.png';
+      $font_size_x=8;
+      $font_size_y=16;
+      break;
+
+   case 'microknight+':
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_microknight+.png';
+      $font_size_x=8;
+      $font_size_y=16;
+      break;
+
+   case 'microknightplus':
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_microknight+.png';
+      $font_size_x=8;
+      $font_size_y=16;
+      break;
+
+   case 'microknight8':
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_microknight8.png';
       $font_size_x=8;
       $font_size_y=8;
-      $bits=8;
       break;
 
    case 'mosoul':
-      $font_file='ansilove_font_mosoul.png';
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_mosoul.png';
       $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
+      $font_size_y=16;
       break;
 
    case 'pot-noodle':
-      $font_file='ansilove_font_pot-noodle.png';
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_pot-noodle.png';
       $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
+      $font_size_y=16;
       break;
 
    case 'topaz':
-      $font_file='ansilove_font_topaz.png';
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_topaz_1200.png';
       $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
+      $font_size_y=16;
       break;
 
    case 'topaz+':
-      $font_file='ansilove_font_topaz+.png';
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_topaz_1200+.png';
       $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
+      $font_size_y=16;
       break;
 
    case 'topazplus':
-      $font_file='ansilove_font_topaz+.png';
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_topaz_1200+.png';
       $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
+      $font_size_y=16;
+      break;
+
+   case 'topaz500':
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_topaz_500.png';
+      $font_size_x=8;
+      $font_size_y=16;
+      break;
+
+   case 'topaz500+':
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_topaz_500+.png';
+      $font_size_x=8;
+      $font_size_y=16;
+      break;
+
+   case 'topaz500plus':
+      $font_amiga=TRUE;
+      $font_file='ansilove_font_amiga_topaz_500+.png';
+      $font_size_x=8;
+      $font_size_y=16;
       break;
 
    default:
@@ -839,159 +882,6 @@ function load_pcboard($input,$output,$font,$bits)
       $font_size_y=8;
       break;
 
-   case 'armenian':
-      $font_file='ansilove_font_pc_armenian.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'baltic':
-      $font_file='ansilove_font_pc_baltic.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'cyrillic':
-      $font_file='ansilove_font_pc_cyrillic.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'french-canadian':
-      $font_file='ansilove_font_pc_french_canadian.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'greek':
-      $font_file='ansilove_font_pc_greek.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'greek-869':
-      $font_file='ansilove_font_pc_greek_869.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'hebrew':
-      $font_file='ansilove_font_pc_hebrew.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'icelandic':
-      $font_file='ansilove_font_pc_icelandic.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'latin1':
-      $font_file='ansilove_font_pc_latin1.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'latin2':
-      $font_file='ansilove_font_pc_latin2.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'nordic':
-      $font_file='ansilove_font_pc_nordic.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'persian':
-      $font_file='ansilove_font_pc_persian.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'portuguese':
-      $font_file='ansilove_font_pc_portuguese.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'russian':
-      $font_file='ansilove_font_pc_russian.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'turkish':
-      $font_file='ansilove_font_pc_turkish.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'amiga':
-      $font_file='ansilove_font_topaz+.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
-   case 'b-strict':
-      $font_file='ansilove_font_b-strict.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
-      break;
-
-   case 'b-struct':
-      $font_file='ansilove_font_b-struct.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
-      break;
-
-   case 'microknight':
-      $font_file='ansilove_font_microknight.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
-      break;
-
-   case 'mosoul':
-      $font_file='ansilove_font_mosoul.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
-      break;
-
-   case 'pot-noodle':
-      $font_file='ansilove_font_pot-noodle.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
-   case 'topaz':
-      $font_file='ansilove_font_topaz.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
-   case 'topaz+':
-      $font_file='ansilove_font_topaz+.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
-   case 'topazplus':
-      $font_file='ansilove_font_topaz+.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
    default:
       $font_file='ansilove_font_pc_80x25.png';
       $font_size_x=9;
@@ -1371,159 +1261,6 @@ function load_binary($input,$output,$columns,$font,$bits,$icecolors)
       $font_file='ansilove_font_pc_80x50.png';
       $font_size_x=9;
       $font_size_y=8;
-      break;
-
-   case 'armenian':
-      $font_file='ansilove_font_pc_armenian.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'baltic':
-      $font_file='ansilove_font_pc_baltic.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'cyrillic':
-      $font_file='ansilove_font_pc_cyrillic.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'french-canadian':
-      $font_file='ansilove_font_pc_french_canadian.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'greek':
-      $font_file='ansilove_font_pc_greek.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'greek-869':
-      $font_file='ansilove_font_pc_greek_869.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'hebrew':
-      $font_file='ansilove_font_pc_hebrew.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'icelandic':
-      $font_file='ansilove_font_pc_icelandic.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'latin1':
-      $font_file='ansilove_font_pc_latin1.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'latin2':
-      $font_file='ansilove_font_pc_latin2.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'nordic':
-      $font_file='ansilove_font_pc_nordic.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'persian':
-      $font_file='ansilove_font_pc_persian.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'portuguese':
-      $font_file='ansilove_font_pc_portuguese.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'russian':
-      $font_file='ansilove_font_pc_russian.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'turkish':
-      $font_file='ansilove_font_pc_turkish.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'amiga':
-      $font_file='ansilove_font_topaz+.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
-   case 'b-strict':
-      $font_file='ansilove_font_b-strict.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
-      break;
-
-   case 'b-struct':
-      $font_file='ansilove_font_b-struct.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
-      break;
-
-   case 'microknight':
-      $font_file='ansilove_font_microknight.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
-      break;
-
-   case 'mosoul':
-      $font_file='ansilove_font_mosoul.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
-      break;
-
-   case 'pot-noodle':
-      $font_file='ansilove_font_pot-noodle.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
-   case 'topaz':
-      $font_file='ansilove_font_topaz.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
-   case 'topaz+':
-      $font_file='ansilove_font_topaz+.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
-   case 'topazplus':
-      $font_file='ansilove_font_topaz+.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
       break;
 
    default:
@@ -2258,159 +1995,6 @@ function load_tundra($input,$output,$font,$bits)
       $font_file='ansilove_font_pc_80x50.png';
       $font_size_x=9;
       $font_size_y=8;
-      break;
-
-   case 'armenian':
-      $font_file='ansilove_font_pc_armenian.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'baltic':
-      $font_file='ansilove_font_pc_baltic.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'cyrillic':
-      $font_file='ansilove_font_pc_cyrillic.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'french-canadian':
-      $font_file='ansilove_font_pc_french_canadian.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'greek':
-      $font_file='ansilove_font_pc_greek.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'greek-869':
-      $font_file='ansilove_font_pc_greek_869.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'hebrew':
-      $font_file='ansilove_font_pc_hebrew.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'icelandic':
-      $font_file='ansilove_font_pc_icelandic.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'latin1':
-      $font_file='ansilove_font_pc_latin1.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'latin2':
-      $font_file='ansilove_font_pc_latin2.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'nordic':
-      $font_file='ansilove_font_pc_nordic.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'persian':
-      $font_file='ansilove_font_pc_persian.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'portuguese':
-      $font_file='ansilove_font_pc_portuguese.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'russian':
-      $font_file='ansilove_font_pc_russian.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'turkish':
-      $font_file='ansilove_font_pc_turkish.png';
-      $font_size_x=9;
-      $font_size_y=16;
-      break;
-
-   case 'amiga':
-      $font_file='ansilove_font_topaz+.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
-   case 'b-strict':
-      $font_file='ansilove_font_b-strict.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
-      break;
-
-   case 'b-struct':
-      $font_file='ansilove_font_b-struct.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
-      break;
-
-   case 'microknight':
-      $font_file='ansilove_font_microknight.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
-      break;
-
-   case 'mosoul':
-      $font_file='ansilove_font_mosoul.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      $bits=8;
-      break;
-
-   case 'pot-noodle':
-      $font_file='ansilove_font_pot-noodle.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
-   case 'topaz':
-      $font_file='ansilove_font_topaz.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
-   case 'topaz+':
-      $font_file='ansilove_font_topaz+.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
-      break;
-
-   case 'topazplus':
-      $font_file='ansilove_font_topaz+.png';
-      $font_size_x=8;
-      $font_size_y=11;
-      $bits=8;
       break;
 
    default:
