@@ -167,6 +167,10 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
    {
       $thumbnail=1;
    }
+   if ($bits=='transparent')
+   {
+      $transparent=1;
+   }
    if ($bits!=8 && $bits!=9)
    {
       $bits=8;
@@ -812,7 +816,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
    }
    else
    {
-      imagecolorallocate($ansi,0,0,0);
+      $background_canvas=imagecolorallocate($ansi,0,0,0);
    }
 
 
@@ -838,6 +842,11 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 /*****************************************************************************/
 /* CREATE OUTPUT FILE                                                        */
 /*****************************************************************************/
+
+   if ($transparent)
+   {
+      imagecolortransparent($ansi,$background_canvas);
+   }
 
    if ($thumbnail==1)
    {
