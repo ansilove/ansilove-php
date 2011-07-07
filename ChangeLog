@@ -1,0 +1,114 @@
+                _ __ ____ ___________              __________ ____ __ _
+                  .________         //_ ANSilOVE _\\        ._____
+        ____/\ ___|      _/___/\   __    _____.   _ ____/\ _|     \ ____
+       /  .__\\   \      |  _ //___ _)_. \_   |____      \\ |    // ___/
+      /   __/  \  \      |__ \/    \   |_ |   |    \ |     \     / __)____
+     /____|     \_|\_____|_________/__ `/ |______ //_______/____/______  /
+          |______/    _ __ __________ \/ _______ \/ ________ __ _  yop \/
+
+
+Ansilove/PHP 1.07 (2009-06-16)
+
+- Added support for thumbnails rendering, with configurable maximum height
+- Added customizable output color definitions in the configuration file for
+  CED mode rendering
+- Modified the ANSi parser to allow ansi sequences with inverted graphic
+  rendition values to render correctly
+
+
+
+Ansilove/PHP 1.06 (2009-05-21)
+
+- Dumped all the fonts again to make the font collection more homogeneous and
+  avoid minor character differences between fonts as much as possible
+- Added 6 new PC Fonts (Charsets : Armenian, French Canadian, Greek (CP869),
+  Icelandic, Persian, Portuguese)
+- Fixed minor color palette problems causing the full intensity value to be
+  252 instead of 255
+- Added customizable file extensions definitions in the configuration file
+  for DIZ mode rendering
+- Added filters removing white spaces and empty lines at the beginning and
+  end of DIZ files
+
+
+
+Ansilove/PHP 1.05 (2009-04-29)
+
+- Added support for PCBoard (.PCB) format
+- Updated the documentation (README file), to cover options related to the
+  PCBoard loader (PCB codes stripping)
+- Fixed a bug preventing the CED rendering mode to operate correctly. Ansi and
+  PCBoard files can now be rendered in CED mode again
+- Added 1 example ANSi and 1 example ASCii
+
+
+
+Ansilove/PHP 1.04 (2009-04-07)
+
+- Added 9 new PC Fonts (Charsets: Baltic, Cyrillic, Greek, Hebrew, Latin1,
+  Latin2, Nordic, Russian, Turkish)
+- Fixed .DIZ file extension detection in the online converter, uploaded .DIZ
+  files are now rendered with the exact needed number of columns
+- Fixed some uninitialized variables warnings
+- Added 1 example ASCii
+- Added a loader (ansilove.bat) for the command line converter under Windows
+- Converted the HTML templates to XHTML (ansilove.html and Ansilove online)
+- Modified the Ansilove Online upload interface and corrected the maximum
+  length value for the columns argument
+- Updated the documentation (README file), which is now providing more detailed
+  examples about all the possible options, and informations about command line
+  converter usage under Windows
+
+
+
+Ansilove/PHP 1.03 (2006-02-11)
+
+- Added input sanitization in the loaders (load_*.php) to prevent
+  disclosure of unauthorized content by converting files accessible
+  by the webserver
+- Added a .htaccess to restrict access (Deny to all by default) to the
+  'upload' directory (online converter)
+- Adding '.ansilove' at the end of the uploaded filenames to prevent code
+  injection if the upload directory access isn't restricted, and delete
+  the uploaded file after the convertion (online converter)
+- The online converter is now using the internal loaders from the library
+  instead of the load_*.php loaders
+- Added a config file to define directories path
+- Added checks for requires in the online converter and in the loaders
+
+
+
+Ansilove/PHP 1.02 (2006-02-09)
+
+- Added support for IDF (.IDF) format
+- Added support for TUNDRA (.TND) format
+- Added support for XBiN (.XB) format
+- Added online file converter
+- Added CED mode to render the input file in black on gray
+  (only available in ANSi loader)
+- Added topazplus alias for topaz+ so it is possible to use it in urls
+- Enforced little-endian byte order instead of machine byte order when
+  unpacking data
+- Added 3 example ANSis
+- Fixed a bug in ADF converter, color 0 of the palette was set to black
+  instead of the correct value
+
+
+
+Ansilove/PHP 1.01 (2006-01-27)
+
+- Added 6 new Amiga Fonts
+- Files with a .DIZ extension are now rendered with the exact needed number
+  of columns
+- Fixed a background rendering bug in ANSi converter, which caused problems
+  when using Amiga Font (Used font_size_x value for background block size
+  instead of a fixed value)
+- Fixed another background bug in ANSi converter (Buffer wasn't filled with
+  black after being allocated, which caused some blocks to have an incorrect
+  background color if nothing was drawn)
+
+
+
+Ansilove/PHP 1.00 (2006-01-22)
+
+- Initial release
