@@ -24,13 +24,40 @@
 /*****************************************************************************/
 
 /*****************************************************************************/
+/* ERROR HANDLING AND MESSAGE LOGGER                                         */
+/*****************************************************************************/
+
+function write_log($message)
+{
+    if (($file = @fopen (ANSILOVE_LOG_FILE, a))==FALSE)
+    {
+        echo "ERROR: Can't create log file.";
+        exit(-1);
+    }
+
+    $string = date("[Y-m-d] - H:i:s")." - $message\n";
+
+    fputs ($file,$string);
+    fclose ($file);
+}
+
+function error($message)
+{
+    trim($message);
+    echo("ERROR: ".$message."\n\n");
+    write_log($message);
+    exit(-1);
+}
+
+
+
+/*****************************************************************************/
 /* LOAD CONFIGURATION FILE                                                   */
 /*****************************************************************************/
 
 if (!@require_once(dirname(__FILE__).'/ansilove.cfg.php'))
 {
-   echo "ERROR: Can't load Ansilove configuration file.\n\n";
-   exit(-1);
+   error("Can't load Ansilove configuration file");
 }
 
 /*****************************************************************************/
@@ -56,8 +83,7 @@ function check_libraries()
 {
    if (!extension_loaded('gd'))
    {
-      echo "ERROR: Ansilove requires GD library.\n\n";
-      exit(-1);
+      error("Ansilove requires GD library");
    }
 }
 
@@ -316,8 +342,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 
    if (!$input_file = fopen($input,'r'))
    {
-      echo "ERROR: Can't open file $input\n\n";
-      exit(-1);
+      error("Can't open file $input");
    }
 
    $input_file_sauce=load_sauce($input);
@@ -333,8 +358,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 
    if (!$input_file_buffer = fread($input_file,$input_file_size))
    {
-      echo "ERROR: Can't read file $input\n\n";
-      exit(-1);
+      error("Can't read file $input");
    }
 
    fclose($input_file);
@@ -359,14 +383,12 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 
    if (!$background = imagecreatefrompng(dirname(__FILE__).'/fonts/ansilove_background.png'))
    {
-      echo "ERROR: Can't open file ansilove_background.png\n\n";
-      exit(-1);
+      error("Can't open file ansilove_background.png");
    }
 
    if (!$font = imagecreatefrompng(dirname(__FILE__).'/fonts/'.$font_file))
    {
-      echo "ERROR: Can't open file $font_file\n\n";
-      exit(-1);
+      error("Can't open file $font_file");
    }
 
    imagecolortransparent($font,20);
@@ -713,8 +735,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 
    if (!$ansi = imagecreate($columns*$bits,($position_y_max)*$font_size_y))
    {
-      echo "ERROR: Can't allocate buffer image memory\n\n";
-      exit(-1);
+      error("Can't allocate buffer image memory");
    }
 
    if ($ced==1)
@@ -781,8 +802,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 
       if (!$thumbnail = imagecreatetruecolor($columns,$height))
       {
-         echo "ERROR: Can't allocate buffer image memory\n\n";
-         exit(-1);
+         error("Can't allocate buffer image memory");
       }
 
       imagecopyresampled($thumbnail,$ansi,0,0,0,0,$columns,$height,$columns*8,$height_source);
@@ -876,8 +896,7 @@ function load_pcboard($input,$output,$font,$bits)
 
    if (!$input_file = fopen($input,'r'))
    {
-      echo "ERROR: Can't open file $input\n\n";
-      exit(-1);
+      error("Can't open file $input");
    }
 
    $input_file_sauce=load_sauce($input);
@@ -893,8 +912,7 @@ function load_pcboard($input,$output,$font,$bits)
 
    if (!$input_file_buffer = fread($input_file,$input_file_size))
    {
-      echo "ERROR: Can't read file $input\n\n";
-      exit(-1);
+      error("Can't read file $input");
    }
 
    fclose($input_file);
@@ -907,14 +925,12 @@ function load_pcboard($input,$output,$font,$bits)
 
    if (!$background = imagecreatefrompng(dirname(__FILE__).'/fonts/ansilove_background.png'))
    {
-      echo "ERROR: Can't open file ansilove_background.png\n\n";
-      exit(-1);
+      error("Can't open file ansilove_background.png");
    }
 
    if (!$font = imagecreatefrompng(dirname(__FILE__).'/fonts/'.$font_file))
    {
-      echo "ERROR: Can't open file $font_file\n\n";
-      exit(-1);
+      error("Can't open file $font_file");
    }
 
    imagecolortransparent($font,20);
@@ -1115,8 +1131,7 @@ function load_pcboard($input,$output,$font,$bits)
 
    if (!$pcboard = imagecreate($columns*$bits,($position_y_max)*$font_size_y))
    {
-      echo "ERROR: Can't allocate buffer image memory\n\n";
-      exit(-1);
+      error("Can't allocate buffer image memory");
    }
 
    imagecolorallocate($pcboard,0,0,0);
@@ -1162,8 +1177,7 @@ function load_pcboard($input,$output,$font,$bits)
 
       if (!$thumbnail = imagecreatetruecolor($columns,$height))
       {
-         echo "ERROR: Can't allocate buffer image memory\n\n";
-         exit(-1);
+         error("Can't allocate buffer image memory");
       }
 
       imagecopyresampled($thumbnail,$pcboard,0,0,0,0,$columns,$height,$columns*8,$height_source);
@@ -1260,8 +1274,7 @@ function load_binary($input,$output,$columns,$font,$bits,$icecolors)
 
    if (!$input_file = fopen($input,'r'))
    {
-      echo "ERROR: Can't open file $input\n\n";
-      exit(-1);
+      error("Can't open file $input");
    }
 
    $input_file_sauce=load_sauce($input);
@@ -1277,8 +1290,7 @@ function load_binary($input,$output,$columns,$font,$bits,$icecolors)
 
    if (!$input_file_buffer = fread($input_file,$input_file_size))
    {
-      echo "ERROR: Can't read file $input\n\n";
-      exit(-1);
+      error("Can't read file $input");
    }
 
    fclose($input_file);
@@ -1291,22 +1303,19 @@ function load_binary($input,$output,$columns,$font,$bits,$icecolors)
 
    if (!$background = imagecreatefrompng(dirname(__FILE__).'/fonts/ansilove_background.png'))
    {
-      echo "ERROR: Can't open file ansilove_background.png\n\n";
-      exit(-1);
+      error("Can't open file ansilove_background.png");
    }
 
    if (!$font = imagecreatefrompng(dirname(__FILE__).'/fonts/'.$font_file))
    {
-      echo "ERROR: Can't open file $font_file\n\n";
-      exit(-1);
+      error("Can't open file $font_file");
    }
 
    imagecolortransparent($font,20);
 
    if (!$binary = imagecreate($columns*$bits,(($input_file_size/2)/$columns)*$font_size_y))
    {
-      echo "ERROR: Can't allocate buffer image memory\n\n";
-      exit(-1);
+      error("Can't allocate buffer image memory");
    }
 
    imagecolorallocate($binary,0,0,0);
@@ -1391,8 +1400,7 @@ function load_binary($input,$output,$columns,$font,$bits,$icecolors)
 
       if (!$thumbnail = imagecreatetruecolor($columns,$height))
       {
-         echo "ERROR: Can't allocate buffer image memory\n\n";
-         exit(-1);
+         error("Can't allocate buffer image memory");
       }
 
       imagecopyresampled($thumbnail,$binary,0,0,0,0,$columns,$height,$columns*8,$height_source);
@@ -1454,8 +1462,7 @@ function load_adf($input,$output,$bits)
 
    if (!$input_file = fopen($input,'r'))
    {
-      echo "ERROR: Can't open file $input\n\n";
-      exit(-1);
+      error("Can't open file $input");
    }
 
    $input_file_sauce=load_sauce($input);
@@ -1471,8 +1478,7 @@ function load_adf($input,$output,$bits)
 
    if (!$input_file_buffer = fread($input_file,$input_file_size))
    {
-      echo "ERROR: Can't read file $input\n\n";
-      exit(-1);
+      error("Can't read file $input");
    }
 
    fclose($input_file);
@@ -1485,20 +1491,17 @@ function load_adf($input,$output,$bits)
 
    if (!$background = imagecreate(128,16))
    {
-      echo "ERROR: Can't allocate background buffer image memory\n\n";
-      exit(-1);
+      error("Can't allocate background buffer image memory");
    }
 
    if (!$font = imagecreate(2048,256))
    {
-      echo "ERROR: Can't allocate font buffer image memory\n\n";
-      exit(-1);
+      error("Can't allocate font buffer image memory");
    }
 
    if (!$font_inverted = imagecreate(2048,16))
    {
-      echo "ERROR: Can't allocate temporary font buffer image memory\n\n";
-      exit(-1);
+      error("Can't allocate temporary font buffer image memory");
    }
 
 
@@ -1574,8 +1577,7 @@ function load_adf($input,$output,$bits)
 
    if (!$adf = imagecreate(640,((($input_file_size-192-4096-1)/2)/80)*16))
    {
-      echo "ERROR: Can't allocate buffer image memory\n\n";
-      exit(-1);
+      error("Can't allocate buffer image memory");
    }
 
    imagecolorallocate($adf,0,0,0);
@@ -1635,8 +1637,7 @@ function load_adf($input,$output,$bits)
 
       if (!$thumbnail = imagecreatetruecolor($columns,$height))
       {
-         echo "ERROR: Can't allocate buffer image memory\n\n";
-         exit(-1);
+         error("Can't allocate buffer image memory");
       }
 
       imagecopyresampled($thumbnail,$adf,0,0,0,0,$columns,$height,$columns*8,$height_source);
@@ -1699,8 +1700,7 @@ function load_idf($input,$output,$bits)
 
    if (!$input_file = fopen($input,'r'))
    {
-      echo "ERROR: Can't open file $input\n\n";
-      exit(-1);
+      error("Can't open file $input");
    }
 
    $input_file_sauce=load_sauce($input);
@@ -1716,8 +1716,7 @@ function load_idf($input,$output,$bits)
 
    if (!$input_file_buffer = fread($input_file,$input_file_size))
    {
-      echo "ERROR: Can't read file $input\n\n";
-      exit(-1);
+      error("Can't read file $input");
    }
 
    fclose($input_file);
@@ -1739,20 +1738,17 @@ function load_idf($input,$output,$bits)
 
    if (!$background = imagecreate(128,16))
    {
-      echo "ERROR: Can't allocate background buffer image memory\n\n";
-      exit(-1);
+      error("Can't allocate background buffer image memory");
    }
 
    if (!$font = imagecreate(2048,256))
    {
-      echo "ERROR: Can't allocate font buffer image memory\n\n";
-      exit(-1);
+      error("Can't allocate font buffer image memory");
    }
 
    if (!$font_inverted = imagecreate(2048,16))
    {
-      echo "ERROR: Can't allocate temporary font buffer image memory\n\n";
-      exit(-1);
+      error("Can't allocate temporary font buffer image memory");
    }
 
 
@@ -1863,8 +1859,7 @@ function load_idf($input,$output,$bits)
 
    if (!$idf = imagecreate(($idf_header['x2']+1)*8,(sizeof($idf_buffer)/2/80)*16))
    {
-      echo "ERROR: Can't allocate buffer image memoryeee\n\n";
-      exit(-1);
+      error("Can't allocate buffer image memory");
    }
 
    imagecolorallocate($idf,0,0,0);
@@ -1921,8 +1916,7 @@ function load_idf($input,$output,$bits)
 
       if (!$thumbnail = imagecreatetruecolor($columns,$height))
       {
-         echo "ERROR: Can't allocate buffer image memory\n\n";
-         exit(-1);
+         error("Can't allocate buffer image memory");
       }
 
       imagecopyresampled($thumbnail,$idf,0,0,0,0,$columns,$height,$columns*8,$height_source);
@@ -2017,8 +2011,7 @@ function load_tundra($input,$output,$font,$bits)
 
    if (!$input_file = fopen($input,'r'))
    {
-      echo "ERROR: Can't open file $input\n\n";
-      exit(-1);
+      error("Can't open file $input");
    }
 
    $input_file_sauce=load_sauce($input);
@@ -2034,8 +2027,7 @@ function load_tundra($input,$output,$font,$bits)
 
    if (!$input_file_buffer = fread($input_file,$input_file_size))
    {
-      echo "ERROR: Can't read file $input\n\n";
-      exit(-1);
+      error("Can't read file $input");
    }
 
    fclose($input_file);
@@ -2051,8 +2043,7 @@ function load_tundra($input,$output,$font,$bits)
 
    if (ord($tundra_header['value'])!=24 || $tundra_header['string']!='TUNDRA24')
    {
-      echo "ERROR: $input is not a TUNDRA file.\n\n";
-      exit;
+      error("$input is not a TUNDRA file");
    }
 
 
@@ -2063,14 +2054,12 @@ function load_tundra($input,$output,$font,$bits)
 
    if (!$background = imagecreatefrompng(dirname(__FILE__).'/fonts/ansilove_background.png'))
    {
-      echo "ERROR: Can't open file ansilove_background.png\n\n";
-      exit(-1);
+      error("Can't open file ansilove_background.png");
    }
 
    if (!$font = imagecreatefrompng(dirname(__FILE__).'/fonts/'.$font_file))
    {
-      echo "ERROR: Can't open file $font_file\n\n";
-      exit(-1);
+      error("Can't open file $font_file");
    }
 
    imagecolorset($font,20,0,0,0);
@@ -2135,8 +2124,7 @@ function load_tundra($input,$output,$font,$bits)
 
    if (!$tundra = imagecreate($columns*$bits,($position_y)*$font_size_y))
    {
-      echo "ERROR: Can't allocate buffer image memory\n\n";
-      exit(-1);
+      error("Can't allocate buffer image memory");
    }
 
    imagecolorallocate($tundra,0,0,0);
@@ -2255,8 +2243,7 @@ function load_tundra($input,$output,$font,$bits)
 
       if (!$thumbnail = imagecreatetruecolor($columns,$height))
       {
-         echo "ERROR: Can't allocate buffer image memory\n\n";
-         exit(-1);
+         error("Can't allocate buffer image memory");
       }
 
       imagecopyresampled($thumbnail,$tundra,0,0,0,0,$columns,$height,$columns*8,$height_source);
@@ -2318,8 +2305,7 @@ function load_xbin($input,$output,$bits)
 
    if (!$input_file = fopen($input,'r'))
    {
-      echo "ERROR: Can't open file $input\n\n";
-      exit(-1);
+      error("Can't open file $input");
    }
 
    $input_file_sauce=load_sauce($input);
@@ -2335,8 +2321,7 @@ function load_xbin($input,$output,$bits)
 
    if (!$input_file_buffer = fread($input_file,$input_file_size))
    {
-      echo "ERROR: Can't read file $input\n\n";
-      exit(-1);
+      error("Can't read file $input");
    }
 
    fclose($input_file);
@@ -2351,8 +2336,7 @@ function load_xbin($input,$output,$bits)
 
    if ($xbin_header['ID']!='XBIN')
    {
-      echo "ERROR: $input is not a XBiN file.\n\n";
-      exit;
+      error("$input is not a XBiN file");
    }
 
    $xbin_header=array_merge($xbin_header,unpack('CEofChar/vWidth/vHeight/CFontsize/CFlags',substr($input_file_buffer,4,7)));
@@ -2392,8 +2376,7 @@ function load_xbin($input,$output,$bits)
    {
       if (!$background = imagecreate(128,16))
       {
-         echo "ERROR: Can't allocate background buffer image memory\n\n";
-         exit(-1);
+         error("Can't allocate background buffer image memory");
       }
 
       for ($loop=0;$loop<16;$loop++)
@@ -2413,8 +2396,7 @@ function load_xbin($input,$output,$bits)
    {
       if (!$background = imagecreatefrompng(dirname(__FILE__).'/fonts/ansilove_background.png'))
       {
-         echo "ERROR: Can't open file ansilove_background.png\n\n";
-         exit(-1);
+         error("Can't open file ansilove_background.png");
       }
 
       $background_size_x=9;
@@ -2430,14 +2412,12 @@ function load_xbin($input,$output,$bits)
    {
       if (!$font = imagecreate(2048,$xbin_header['Fontsize']*16))
       {
-         echo "ERROR: Can't allocate font buffer image memory\n\n";
-         exit(-1);
+         error("Can't allocate font buffer image memory");
       }
 
       if (!$font_inverted = imagecreate(2048,$xbin_header['Fontsize']))
       {
-         echo "ERROR: Can't allocate temporary font buffer image memory\n\n";
-         exit(-1);
+         error("Can't allocate temporary font buffer image memory");
       }
 
       imagepalettecopy($font,$background);
@@ -2487,8 +2467,7 @@ function load_xbin($input,$output,$bits)
    {
       if (!$font = imagecreatefrompng (dirname(__FILE__).'/fonts/ansilove_font_pc_80x25.png'))
       {
-         echo "ERROR: Can't open file $font_file\n\n";
-         exit(-1);
+         error("Can't open file $font_file");
       }
 
       $font_size_x=9;
@@ -2575,8 +2554,7 @@ function load_xbin($input,$output,$bits)
 
    if (!$xbin = imagecreatetruecolor($xbin_header['Width']*8,$xbin_header['Height']*$font_size_y))
    {
-      echo "ERROR: Can't allocate buffer image memory\n\n";
-      exit(-1);
+      error("Can't allocate buffer image memory");
    }
 
    imagecolorallocate($xbin,0,0,0);
@@ -2632,8 +2610,7 @@ function load_xbin($input,$output,$bits)
 
       if (!$thumbnail = imagecreatetruecolor($columns,$height))
       {
-         echo "ERROR: Can't allocate buffer image memory\n\n";
-         exit(-1);
+         error("Can't allocate buffer image memory");
       }
 
       imagecopyresampled($thumbnail,$xbin,0,0,0,0,$columns,$height,$columns*8,$height_source);
@@ -2694,8 +2671,7 @@ function load_sauce($input)
 
    if (!$input_file = fopen ($input,'r'))
    {
-      echo "ERROR: Can't open file $input\n\n";
-      exit(-1);
+      error("Can't open file $input");
    }
 
    $input_file_size=filesize($input);
