@@ -415,7 +415,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
       $current_character=ord($input_file_buffer[$loop]);
       $next_character=ord($input_file_buffer[$loop+1]);
 
-      if ($position_x==80)
+      if ($position_x==80 && WRAP_COLUMN_80)
       {
          $position_y++;
          $position_x=0;
