@@ -374,24 +374,6 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 
 
 /*****************************************************************************/
-/* ALLOCATE BACKGROUND/FOREGROUND COLOR ARRAYS                               */
-/*****************************************************************************/
-
-   $background_colors[40]=0;  $background_colors[41]=4;  $background_colors[42]=2;
-   $background_colors[43]=6;  $background_colors[44]=1;  $background_colors[45]=5;
-   $background_colors[46]=3;  $background_colors[47]=7;
-
-   $foreground_colors[20]=8;  $foreground_colors[21]=12; $foreground_colors[22]=10;
-   $foreground_colors[23]=14; $foreground_colors[24]=9;  $foreground_colors[25]=13;
-   $foreground_colors[26]=11; $foreground_colors[27]=15;
-
-   $foreground_colors[30]=0;  $foreground_colors[31]=4;  $foreground_colors[32]=2;
-   $foreground_colors[33]=6;  $foreground_colors[34]=1;  $foreground_colors[35]=5;
-   $foreground_colors[36]=3;  $foreground_colors[37]=7;
-
-
-
-/*****************************************************************************/
 /* PROCESS ANSI                                                              */
 /*****************************************************************************/
 
@@ -644,25 +626,23 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                      $blink=1;
                   }
 
-                  if ($ansi_sequence_value>29 && $ansi_sequence_value<40)
+                  if ($ansi_sequence_value>29 && $ansi_sequence_value<38)
                   {
+                     $color_foreground=$ansi_sequence_value-30;
+
                      if ($bold==1)
                      {
-                        $ansi_sequence_value=$ansi_sequence_value-10;
+                        $color_foreground+=8;
                      }
-                     $color_foreground=$foreground_colors[$ansi_sequence_value];
                   }
 
-                  if ($ansi_sequence_exploded[$loop_ansi_sequence]>39 && $ansi_sequence_exploded[$loop_ansi_sequence]<50)
+                  if ($ansi_sequence_value>39 && $ansi_sequence_value<48)
                   {
+                     $color_background=$ansi_sequence_value-40;
+
                      if ($blink==1 && $icecolors==1)
                      {
-                        $ansi_sequence_value=$ansi_sequence_value-20;
-                        $color_background=$foreground_colors[$ansi_sequence_value];
-                     }
-                     else
-                     {
-                        $color_background=$background_colors[$ansi_sequence_value];
+                        $color_background+=8;
                      }
                   }
                }
@@ -939,16 +919,19 @@ function load_pcboard($input,$output,$font,$bits)
 
    imagecolortransparent($font,20);
 
+
+
 /*****************************************************************************/
 /* ALLOCATE BACKGROUND/FOREGROUND COLOR ARRAYS                               */
 /*****************************************************************************/
 
-   $pcb_colors[48]=0;   $pcb_colors[49]=1;   $pcb_colors[50]=2;
-   $pcb_colors[51]=3;   $pcb_colors[52]=4;   $pcb_colors[53]=5;
-   $pcb_colors[54]=6;   $pcb_colors[55]=7;   $pcb_colors[56]=8;
-   $pcb_colors[57]=9;   $pcb_colors[65]=10;  $pcb_colors[66]=11;
-   $pcb_colors[67]=12;  $pcb_colors[68]=13;  $pcb_colors[69]=14;
-   $pcb_colors[70]=15;
+    $pcb_colors[48]=0;  $pcb_colors[49]=4;   $pcb_colors[50]=2;
+    $pcb_colors[51]=6;  $pcb_colors[52]=1;   $pcb_colors[53]=5;
+    $pcb_colors[54]=3;  $pcb_colors[55]=7;   $pcb_colors[56]=8;
+    $pcb_colors[57]=12; $pcb_colors[65]=10;  $pcb_colors[66]=14;
+    $pcb_colors[67]=9;  $pcb_colors[68]=13;  $pcb_colors[69]=11;
+    $pcb_colors[70]=15;
+
 
 /*****************************************************************************/
 /* STRIP UNWANTED PCBOARD CODES (DEFINED IN CONFIG FILE)                     */
@@ -1331,6 +1314,29 @@ function load_binary($input,$output,$columns,$font,$bits,$icecolors)
 
 
 /*****************************************************************************/
+/* ALLOCATE BACKGROUND/FOREGROUND COLOR ARRAYS                               */
+/*****************************************************************************/
+
+    $binary_colors[0]=0;
+    $binary_colors[1]=4;
+    $binary_colors[2]=2;
+    $binary_colors[3]=6;
+    $binary_colors[4]=1;
+    $binary_colors[5]=5;
+    $binary_colors[6]=3;
+    $binary_colors[7]=7;
+    $binary_colors[8]=8;
+    $binary_colors[9]=12;
+    $binary_colors[10]=10;
+    $binary_colors[11]=14;
+    $binary_colors[12]=9;
+    $binary_colors[13]=13;
+    $binary_colors[14]=11;
+    $binary_colors[15]=15;
+
+
+
+/*****************************************************************************/
 /* PROCESS BINARY                                                            */
 /*****************************************************************************/
 
@@ -1345,8 +1351,8 @@ function load_binary($input,$output,$columns,$font,$bits,$icecolors)
       $character=ord($input_file_buffer[$loop]);
       $attribute=ord($input_file_buffer[$loop+1]);
 
-      $color_background=($attribute & 240)>>4;
-      $color_foreground=$attribute & 15;
+      $color_background=$binary_colors[($attribute & 240)>>4];
+      $color_foreground=$binary_colors[$attribute & 15];
 
       if ($color_background>8 && $icecolors==0)
       {
