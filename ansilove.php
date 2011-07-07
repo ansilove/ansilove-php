@@ -725,7 +725,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                   {
                      $color_foreground=$ansi_sequence_value-30;
 
-                     if ($bold==1)
+                     if ($bold)
                      {
                         $color_foreground+=8;
                      }
@@ -735,7 +735,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                   {
                      $color_background=$ansi_sequence_value-40;
 
-                     if ($blink==1 && $icecolors==1)
+                     if ($blink && $icecolors)
                      {
                         $color_background+=8;
                      }
@@ -791,7 +791,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
    $position_x_max++;
    $position_y_max++;
 
-   if ($ced==1)
+   if ($ced)
    {
       $columns=78;
    }
@@ -811,7 +811,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
       error("Can't allocate buffer image memory");
    }
 
-   if ($ced==1)
+   if ($ced)
    {
       $ced_background_color=explode(",",CED_BACKGROUND_COLOR);
       $ced_foreground_color=explode(",",CED_FOREGROUND_COLOR);
@@ -889,7 +889,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
       imagecolortransparent($ansi,$background_canvas);
    }
 
-   if ($thumbnail==1)
+   if ($thumbnail)
    {
       thumbnail($ansi,$output,$columns,$font_size_y,$position_y_max);
    }
@@ -1234,7 +1234,7 @@ function load_pcboard($input,$output,$font,$bits)
 /* CREATE OUTPUT FILE                                                        */
 /*****************************************************************************/
 
-   if ($thumbnail==1)
+   if ($thumbnail)
    {
       thumbnail($pcboard,$output,$columns,$font_size_y,$position_y_max);
    }
@@ -1425,7 +1425,7 @@ function load_binary($input,$output,$columns,$font,$bits,$icecolors)
 /* CREATE OUTPUT FILE                                                        */
 /*****************************************************************************/
 
-   if ($thumbnail==1)
+   if ($thumbnail)
    {
       $position_y_max=($input_file_size/2)/$columns;
       thumbnail($binary,$output,$columns,$font_size_y,$position_y_max);
@@ -1630,7 +1630,7 @@ function load_adf($input,$output,$bits)
 /* CREATE OUTPUT FILE                                                        */
 /*****************************************************************************/
 
-   if ($thumbnail==1)
+   if ($thumbnail)
    {
       $position_y_max=(($input_file_size-192-4096-1)/2)/80;
       $font_size_y=16;
@@ -1879,7 +1879,7 @@ function load_idf($input,$output,$bits)
 /* CREATE OUTPUT FILE                                                        */
 /*****************************************************************************/
 
-   if ($thumbnail==1)
+   if ($thumbnail)
    {
       $position_y_max=$position_y;
       $font_size_y=16;
@@ -2177,7 +2177,7 @@ function load_tundra($input,$output,$font,$bits)
 /* CREATE OUTPUT FILE                                                        */
 /*****************************************************************************/
 
-   if ($thumbnail==1)
+   if ($thumbnail)
    {
       $position_y_max=$position_y;
 
@@ -2514,7 +2514,7 @@ function load_xbin($input,$output,$bits)
 /* CREATE OUTPUT FILE                                                        */
 /*****************************************************************************/
 
-   if ($thumbnail==1)
+   if ($thumbnail)
    {
       $position_y_max=$xbin_header['Height'];
       $columns=$xbin_header['Width'];
