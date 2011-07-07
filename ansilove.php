@@ -458,7 +458,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 /* SUB                                                                       */
 /*****************************************************************************/
 
-      if ($current_character==26)
+      if ($current_character==26 && SUBSTITUTE_BREAK)
       {
          break;
       }
