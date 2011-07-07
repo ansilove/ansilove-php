@@ -90,6 +90,60 @@ function check_libraries()
 
 
 /*****************************************************************************/
+/* CREATE THUMBNAIL                                                          */
+/*****************************************************************************/
+
+function thumbnail($source,$output,$columns,$font_size_y,$position_y_max)
+{
+   $columns=min($columns,80);
+
+   if (THUMBNAILS_SIZE<=0)
+   {
+      $size=1;
+   }
+   else
+   {
+      $size=THUMBNAILS_SIZE;
+   }
+
+   if (THUMBNAILS_HEIGHT==0)
+   {
+      $height=$position_y_max*($font_size_y/8);
+      $height_source=$position_y_max*$font_size_y;
+   }
+   else
+   {
+      $height=min($position_y_max*($font_size_y/8),THUMBNAILS_HEIGHT);
+      $height_source=$height*8;
+   }
+
+   $width_source=$columns*8;
+   $height*=$size;
+   $columns*=$size;
+
+   if (!$thumbnail = imagecreatetruecolor($columns,$height))
+   {
+      error("Can't allocate buffer image memory");
+   }
+
+   imagecopyresampled($thumbnail,$source,0,0,0,0,$columns,$height,$width_source,$height_source);
+
+   if ($output=='online')
+   {
+      Header("Content-type: image/png");
+      ImagePNG($thumbnail);
+   }
+   else
+   {
+      ImagePNG($thumbnail,$output.".png");
+   }
+
+   imagedestroy($thumbnail);
+}
+
+
+
+/*****************************************************************************/
 /* LOAD ANSI                                                                 */
 /*****************************************************************************/
 
@@ -787,37 +841,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 
    if ($thumbnail==1)
    {
-      if (THUMBNAILS_HEIGHT==0)
-      {
-         $height=$position_y_max*($font_size_y/8);
-         $height_source=$position_y_max*$font_size_y;
-      }
-      else
-      {
-         $height=min($position_y_max*($font_size_y/8),THUMBNAILS_HEIGHT);
-         $height_source=$height*8;
-      }
-
-      $columns=80;
-
-      if (!$thumbnail = imagecreatetruecolor($columns,$height))
-      {
-         error("Can't allocate buffer image memory");
-      }
-
-      imagecopyresampled($thumbnail,$ansi,0,0,0,0,$columns,$height,$columns*8,$height_source);
-
-      if ($output=='online')
-      {
-         Header("Content-type: image/png");
-         ImagePNG($thumbnail);
-      }
-      else
-      {
-         ImagePNG($thumbnail,$output);
-      }
-
-      imagedestroy($thumbnail);
+      thumbnail($ansi,$output,$columns,$font_size_y,$position_y_max);
    }
    else
    {
@@ -1162,37 +1186,7 @@ function load_pcboard($input,$output,$font,$bits)
 
    if ($thumbnail==1)
    {
-      if (THUMBNAILS_HEIGHT==0)
-      {
-         $height=$position_y_max*($font_size_y/8);
-         $height_source=$position_y_max*$font_size_y;
-      }
-      else
-      {
-         $height=min($position_y_max*($font_size_y/8),THUMBNAILS_HEIGHT);
-         $height_source=$height*8;
-      }
-
-      $columns=80;
-
-      if (!$thumbnail = imagecreatetruecolor($columns,$height))
-      {
-         error("Can't allocate buffer image memory");
-      }
-
-      imagecopyresampled($thumbnail,$pcboard,0,0,0,0,$columns,$height,$columns*8,$height_source);
-
-      if ($output=='online')
-      {
-         Header("Content-type: image/png");
-         ImagePNG($thumbnail);
-      }
-      else
-      {
-         ImagePNG($thumbnail,$output);
-      }
-
-      imagedestroy($thumbnail);
+      thumbnail($pcboard,$output,$columns,$font_size_y,$position_y_max);
    }
    else
    {
@@ -1384,38 +1378,7 @@ function load_binary($input,$output,$columns,$font,$bits,$icecolors)
    if ($thumbnail==1)
    {
       $position_y_max=($input_file_size/2)/$columns;
-      
-      if (THUMBNAILS_HEIGHT==0)
-      {
-         $height=$position_y_max*($font_size_y/8);
-         $height_source=$position_y_max*$font_size_y;
-      }
-      else
-      {
-         $height=min($position_y_max*($font_size_y/8),THUMBNAILS_HEIGHT);
-         $height_source=$height*8;
-      }
-
-      $columns=80;
-
-      if (!$thumbnail = imagecreatetruecolor($columns,$height))
-      {
-         error("Can't allocate buffer image memory");
-      }
-
-      imagecopyresampled($thumbnail,$binary,0,0,0,0,$columns,$height,$columns*8,$height_source);
-
-      if ($output=='online')
-      {
-         Header("Content-type: image/png");
-         ImagePNG($thumbnail);
-      }
-      else
-      {
-         ImagePNG($thumbnail,$output);
-      }
-
-      imagedestroy($thumbnail);
+      thumbnail($binary,$output,$columns,$font_size_y,$position_y_max);
    }
    else
    {
@@ -1622,37 +1585,7 @@ function load_adf($input,$output,$bits)
       $position_y_max=(($input_file_size-192-4096-1)/2)/80;
       $font_size_y=16;
 
-      if (THUMBNAILS_HEIGHT==0)
-      {
-         $height=$position_y_max*($font_size_y/8);
-         $height_source=$position_y_max*$font_size_y;
-      }
-      else
-      {
-         $height=min($position_y_max*($font_size_y/8),THUMBNAILS_HEIGHT);
-         $height_source=$height*8;
-      }
-
-      $columns=80;
-
-      if (!$thumbnail = imagecreatetruecolor($columns,$height))
-      {
-         error("Can't allocate buffer image memory");
-      }
-
-      imagecopyresampled($thumbnail,$adf,0,0,0,0,$columns,$height,$columns*8,$height_source);
-
-      if ($output=='online')
-      {
-         Header("Content-type: image/png");
-         ImagePNG($thumbnail);
-      }
-      else
-      {
-         ImagePNG($thumbnail,$output);
-      }
-
-      imagedestroy($thumbnail);
+      thumbnail($adf,$output,$columns,$font_size_y,$position_y_max);
    }
    else
    {
@@ -1901,37 +1834,7 @@ function load_idf($input,$output,$bits)
       $position_y_max=$position_y;
       $font_size_y=16;
 
-      if (THUMBNAILS_HEIGHT==0)
-      {
-         $height=$position_y_max*($font_size_y/8);
-         $height_source=$position_y_max*$font_size_y;
-      }
-      else
-      {
-         $height=min($position_y_max*($font_size_y/8),THUMBNAILS_HEIGHT);
-         $height_source=$height*8;
-      }
-
-      $columns=80;
-
-      if (!$thumbnail = imagecreatetruecolor($columns,$height))
-      {
-         error("Can't allocate buffer image memory");
-      }
-
-      imagecopyresampled($thumbnail,$idf,0,0,0,0,$columns,$height,$columns*8,$height_source);
-
-      if ($output=='online')
-      {
-         Header("Content-type: image/png");
-         ImagePNG($thumbnail);
-      }
-      else
-      {
-         ImagePNG($thumbnail,$output);
-      }
-
-      imagedestroy($thumbnail);
+      thumbnail($idf,$output,$columns,$font_size_y,$position_y_max);
    }
    else
    {
@@ -2228,37 +2131,7 @@ function load_tundra($input,$output,$font,$bits)
    {
       $position_y_max=$position_y;
 
-      if (THUMBNAILS_HEIGHT==0)
-      {
-         $height=$position_y_max*($font_size_y/8);
-         $height_source=$position_y_max*$font_size_y;
-      }
-      else
-      {
-         $height=min($position_y_max*($font_size_y/8),THUMBNAILS_HEIGHT);
-         $height_source=$height*8;
-      }
-
-      $columns=80;
-
-      if (!$thumbnail = imagecreatetruecolor($columns,$height))
-      {
-         error("Can't allocate buffer image memory");
-      }
-
-      imagecopyresampled($thumbnail,$tundra,0,0,0,0,$columns,$height,$columns*8,$height_source);
-
-      if ($output=='online')
-      {
-         Header("Content-type: image/png");
-         ImagePNG($thumbnail);
-      }
-      else
-      {
-         ImagePNG($thumbnail,$output);
-      }
-
-      imagedestroy($thumbnail);
+      thumbnail($tundra,$output,$columns,$font_size_y,$position_y_max);
    }
    else
    {
@@ -2594,38 +2467,9 @@ function load_xbin($input,$output,$bits)
    if ($thumbnail==1)
    {
       $position_y_max=$xbin_header['Height'];
+      $columns=$xbin_header['Width'];
 
-      if (THUMBNAILS_HEIGHT==0)
-      {
-         $height=$position_y_max*($font_size_y/8);
-         $height_source=$position_y_max*$font_size_y;
-      }
-      else
-      {
-         $height=min($position_y_max*($font_size_y/8),THUMBNAILS_HEIGHT);
-         $height_source=$height*8;
-      }
-
-      $columns=80;
-
-      if (!$thumbnail = imagecreatetruecolor($columns,$height))
-      {
-         error("Can't allocate buffer image memory");
-      }
-
-      imagecopyresampled($thumbnail,$xbin,0,0,0,0,$columns,$height,$columns*8,$height_source);
-
-      if ($output=='online')
-      {
-         Header("Content-type: image/png");
-         ImagePNG($thumbnail);
-      }
-      else
-      {
-         ImagePNG($thumbnail,$output);
-      }
-
-      imagedestroy($thumbnail);
+      thumbnail($xbin,$output,$columns,$font_size_y,$position_y_max);
    }
    else
    {

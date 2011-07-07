@@ -139,9 +139,9 @@ if (strtolower(substr($input,strlen($input)-3,3))=='.xb')
    $input_file_extension='.xb';
 }
 
-if ($argv[2]=='thumbnail' | $argv[3]=='thumbnail')
+if ($bits=='thumbnail')
 {
-   $output=$argv[1].THUMBNAILS_TAG.".png";
+   $output=$argv[1].THUMBNAILS_TAG;
    $bits='thumbnail';
 }
 
