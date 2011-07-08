@@ -157,28 +157,26 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 
    $columns=80;
 
-   $ced=0;
-
    if ($bits=='ced')
    {
-      $ced=1;
+      $ced=TRUE;
    }
    if ($bits=='thumbnail')
    {
-      $thumbnail=1;
+      $thumbnail=TRUE;
    }
    if ($bits=='transparent')
    {
-      $transparent=1;
+      $transparent=TRUE;
    }
    if ($bits=='workbench')
    {
-       $workbench=1;
+       $workbench=TRUE;
    }
    if ($bits=='workbench-transparent')
    {
-       $workbench=1;
-       $transparent=1;
+       $workbench=TRUE;
+       $transparent=TRUE;
    }
    if ($bits!=8 && $bits!=9)
    {
@@ -692,8 +690,8 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                   {
                      $color_background=0;
                      $color_foreground=7;
-                     $bold=0;
-                     $blink=0;
+                     $bold=FALSE;
+                     $blink=FALSE;
                   }
 
                   if ($ansi_sequence_value==1)
@@ -702,7 +700,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                      {
                         $color_foreground+=8;
 					 }
-                     $bold=1;
+                     $bold=TRUE;
                   }
 
                   if ($ansi_sequence_value==5)
@@ -711,7 +709,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                      {
                         $color_background+=8;
 					 }
-                     $blink=1;
+                     $blink=TRUE;
                   }
 
                   if ($ansi_sequence_value>29 && $ansi_sequence_value<38)
@@ -928,7 +926,7 @@ function load_pcboard($input,$output,$font,$bits)
 
    if ($bits=='thumbnail')
    {
-      $thumbnail=1;
+      $thumbnail=TRUE;
    }
    if ($bits!=8 && $bits!=9)
    {
@@ -1008,12 +1006,8 @@ function load_pcboard($input,$output,$font,$bits)
 /* ALLOCATE BACKGROUND/FOREGROUND COLOR ARRAYS                               */
 /*****************************************************************************/
 
-    $pcb_colors[48]=0;  $pcb_colors[49]=4;   $pcb_colors[50]=2;
-    $pcb_colors[51]=6;  $pcb_colors[52]=1;   $pcb_colors[53]=5;
-    $pcb_colors[54]=3;  $pcb_colors[55]=7;   $pcb_colors[56]=8;
-    $pcb_colors[57]=12; $pcb_colors[65]=10;  $pcb_colors[66]=14;
-    $pcb_colors[67]=9;  $pcb_colors[68]=13;  $pcb_colors[69]=11;
-    $pcb_colors[70]=15;
+   $pcb_colors[48]=0; $pcb_colors[49]=4; $pcb_colors[50]=2; $pcb_colors[51]=6; $pcb_colors[52]=1; $pcb_colors[53]=5; $pcb_colors[54]=3; $pcb_colors[55]=7; $pcb_colors[56]=8; $pcb_colors[57]=12; $pcb_colors[65]=10; $pcb_colors[66]=14; $pcb_colors[67]=9; $pcb_colors[68]=13; $pcb_colors[69]=11; $pcb_colors[70]=15;
+
 
 
 /*****************************************************************************/
@@ -1271,7 +1265,7 @@ function load_binary($input,$output,$columns,$font,$bits,$icecolors)
 
    if ($bits=='thumbnail')
    {
-      $thumbnail=1;
+      $thumbnail=TRUE;
    }
    if ($bits!=8 && $bits!=9)
    {
@@ -1358,22 +1352,7 @@ function load_binary($input,$output,$columns,$font,$bits,$icecolors)
 /* ALLOCATE BACKGROUND/FOREGROUND COLOR ARRAYS                               */
 /*****************************************************************************/
 
-    $binary_colors[0]=0;
-    $binary_colors[1]=4;
-    $binary_colors[2]=2;
-    $binary_colors[3]=6;
-    $binary_colors[4]=1;
-    $binary_colors[5]=5;
-    $binary_colors[6]=3;
-    $binary_colors[7]=7;
-    $binary_colors[8]=8;
-    $binary_colors[9]=12;
-    $binary_colors[10]=10;
-    $binary_colors[11]=14;
-    $binary_colors[12]=9;
-    $binary_colors[13]=13;
-    $binary_colors[14]=11;
-    $binary_colors[15]=15;
+   $binary_colors[0]=0; $binary_colors[1]=4; $binary_colors[2]=2; $binary_colors[3]=6; $binary_colors[4]=1; $binary_colors[5]=5; $binary_colors[6]=3; $binary_colors[7]=7; $binary_colors[8]=8; $binary_colors[9]=12; $binary_colors[10]=10; $binary_colors[11]=14; $binary_colors[12]=9; $binary_colors[13]=13; $binary_colors[14]=11; $binary_colors[15]=15;
 
 
 
@@ -1454,7 +1433,7 @@ function load_adf($input,$output,$bits)
 
    if ($bits=='thumbnail')
    {
-      $thumbnail=1;
+      $thumbnail=TRUE;
    }
 
 /*****************************************************************************/
@@ -1663,7 +1642,7 @@ function load_idf($input,$output,$bits)
 
    if ($bits=='thumbnail')
    {
-      $thumbnail=1;
+      $thumbnail=TRUE;
    }
 
 /*****************************************************************************/
@@ -1919,7 +1898,7 @@ function load_tundra($input,$output,$font,$bits)
 
    if ($bits=='thumbnail')
    {
-      $thumbnail=1;
+      $thumbnail=TRUE;
    }
    if ($bits!=8 && $bits!=9)
    {
@@ -2209,7 +2188,7 @@ function load_xbin($input,$output,$bits)
 
    if ($bits=='thumbnail')
    {
-      $thumbnail=1;
+      $thumbnail=TRUE;
    }
 
 /*****************************************************************************/
