@@ -20,7 +20,6 @@
 /*****************************************************************************/
 
 DEFINE (ANSILOVE_FILES_DIRECTORY,"ansis/");
-DEFINE (ANSILOVE_UPLOAD_DIRECTORY,"upload/");
 
 DEFINE (ANSILOVE_LOG_FILE,"ansilove.log");
 
