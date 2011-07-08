@@ -141,7 +141,7 @@ if (strtolower(substr($input,strlen($input)-3,3))=='.xb')
 
 if ($bits=='thumbnail')
 {
-   $output=$argv[1].THUMBNAILS_TAG;
+   $output=$argv[1].THUMBNAILS_TAG.".png";
    $bits='thumbnail';
 }
 

@@ -1626,6 +1626,7 @@ function load_adf($input,$output,$bits)
    if ($thumbnail)
    {
       $position_y_max=(($input_file_size-192-4096-1)/2)/80;
+      $columns=80;
       $font_size_y=16;
 
       thumbnail($adf,$output,$columns,$font_size_y,$position_y_max);
@@ -1875,6 +1876,7 @@ function load_idf($input,$output,$bits)
    if ($thumbnail)
    {
       $position_y_max=$position_y;
+      $columns=80;
       $font_size_y=16;
 
       thumbnail($idf,$output,$columns,$font_size_y,$position_y_max);
