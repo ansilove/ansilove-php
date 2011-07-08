@@ -135,7 +135,7 @@ function thumbnail($source,$output,$columns,$font_size_y,$position_y_max)
    }
    else
    {
-      ImagePNG($thumbnail,$output.".png");
+      ImagePNG($thumbnail,$output);
    }
 
    imagedestroy($thumbnail);
