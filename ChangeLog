@@ -7,6 +7,30 @@
           |______/    _ __ __________ \/ _______ \/ ________ __ _  yop \/
 
 
+Ansilove/PHP 1.08 (2011-07-08)
+
+- Added new improved Amiga fonts (With corrected aspect ratio and 100% accurate
+  characters)
+- Reordered font palettes to follow the ANSi color order rather than the EGA one
+- Added an error message logger (ANSILOVE_LOG_FILE option in the config file,
+  default : ansilove.log)
+- Added an option to continue rendering input files when the substitude (SUB)
+  character is encountered (SUBSTITUTE_BREAK option in the config file,
+  default : 1 => Stop when encountering SUB character)
+- Added an option to allow enabling/disabling 80th column wrapping
+  (WRAP_COLUMN_80 option in the config file, default : 1 => Wrap)
+- Changed default background color value for CED mode (170,170,170) instead
+  of (168,168,168)
+- Added a transparent rendering mode to produce output files with transparent
+  background (only available in ANSi loader)
+- Added Workbench mode to render the input file using Amiga Workbench colors
+  (only available in ANSi loader)
+- Added scalable thumbnails support (THUMBNAILS_SIZE option in the config file)
+- Added an example file for thumbnails rendering (examples/thumbnails.html)
+- Added 3 example ASCiis (Thanks to : Cubon, Spidy and Spot)
+
+
+
 Ansilove/PHP 1.07 (2009-06-16)
 
 - Added support for thumbnails rendering, with configurable maximum height
