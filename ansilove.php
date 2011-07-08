@@ -1024,7 +1024,7 @@ function load_pcboard($input,$output,$font,$bits)
 
    for ($loop=0;$loop<sizeof($pcboard_strip_codes_exploded);$loop++)
    {
-      $input_file_buffer=preg_replace($pcboard_strip_codes_exploded[$loop],"",$input_file_buffer);
+      $input_file_buffer=preg_replace("/(".$pcboard_strip_codes_exploded[$loop].")/","",$input_file_buffer);
    }
 
 
@@ -1097,16 +1097,12 @@ function load_pcboard($input,$output,$font,$bits)
          break;
       }
 
-
-
 /*****************************************************************************/
 /* PCB SEQUENCE                                                              */
 /*****************************************************************************/
 
-      if ($current_character==64)
+      if ($current_character==64 & $next_character==88)
       {
-         if ($next_character==88)
-         {
 
 /*****************************************************************************/
 /* SET GRAPHIC RENDITION                                                     */
@@ -1116,43 +1112,42 @@ function load_pcboard($input,$output,$font,$bits)
             $color_foreground=$pcb_colors[ord($input_file_buffer[$loop+3])];
 
             $loop+=3;
-         }
+      }
+      elseif ($current_character==64 & $next_character==67 & $input_file_buffer[$loop+2]=='L' & $input_file_buffer[$loop+3]=='S')
+      {
 
 /*****************************************************************************/
 /* ERASE DISPLAY                                                             */
 /*****************************************************************************/
 
-         if ($next_character==67 & ord($input_file_buffer[$loop+2])==76 & ord($input_file_buffer[$loop+3])==83)
-         {
-            unset($pcboard_buffer);
+         unset($pcboard_buffer);
 
-            $position_x=0;
-            $position_y=0;
+         $position_x=0;
+         $position_y=0;
 
-            $position_x_max=0;
-            $position_y_max=0;
+         $position_x_max=0;
+         $position_y_max=0;
 
-            $loop+=4;
-         }
+         $loop+=4;
+      }
+      elseif ($current_character==64 & $next_character==80 & $input_file_buffer[$loop+2]=='O' & $input_file_buffer[$loop+3]=='S' & $input_file_buffer[$loop+4]==':')
+      {
 
 /*****************************************************************************/
 /* CURSOR POSITION                                                           */
 /*****************************************************************************/
 
-         if ($next_character==80 & ord($input_file_buffer[$loop+2])==79 & ord($input_file_buffer[$loop+3])==83 & ord($input_file_buffer[$loop+4])==58)
+         if ($input_file_buffer[$loop+6]=='@')
          {
-            if (ord($input_file_buffer[$loop+6])==64)
-            {
-               $position_x=(ord($input_file_buffer[$loop+5])-48)-1;
-               $loop+=5;
-            }
-            else
-            {
-               $position_x=(10*(ord($input_file_buffer[$loop+5])-48)+ord($input_file_buffer[$loop+6])-48)-1;
-               $loop+=6;
-            }
+            $position_x=(ord($input_file_buffer[$loop+5])-48)-1;
+            $loop+=5;
          }
-      }
+         else
+         {
+            $position_x=(10*(ord($input_file_buffer[$loop+5])-48)+ord($input_file_buffer[$loop+6])-48)-1;
+            $loop+=6;
+         }
+      }     
       elseif ($current_character!=10 && $current_character!=13 && $current_character!=9)
       {
 
