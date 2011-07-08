@@ -9,6 +9,8 @@
 /*                                                                           */
 /*****************************************************************************/
 
+error_reporting(E_ALL ^ E_NOTICE);
+
 if (!@require_once(dirname(__FILE__).'/ansilove.php'))
 {
    echo "ERROR: Can't load Ansilove library.\n\n";
