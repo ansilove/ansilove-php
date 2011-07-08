@@ -157,32 +157,6 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 
    $columns=80;
 
-   if ($bits=='ced')
-   {
-      $ced=TRUE;
-   }
-   if ($bits=='thumbnail')
-   {
-      $thumbnail=TRUE;
-   }
-   if ($bits=='transparent')
-   {
-      $transparent=TRUE;
-   }
-   if ($bits=='workbench')
-   {
-       $workbench=TRUE;
-   }
-   if ($bits=='workbench-transparent')
-   {
-       $workbench=TRUE;
-       $transparent=TRUE;
-   }
-   if ($bits!=8 && $bits!=9)
-   {
-      $bits=8;
-   }
-
    switch($font)
    {
    case '80x25':
@@ -390,6 +364,32 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
       $font_file='ansilove_font_pc_80x25.png';
       $font_size_x=9;
       $font_size_y=16;
+   }
+
+   if ($bits=='ced')
+   {
+      $ced=TRUE;
+   }
+   if ($bits=='thumbnail')
+   {
+      $thumbnail=TRUE;
+   }
+   if ($bits=='transparent')
+   {
+      $transparent=TRUE;
+   }
+   if ($bits=='workbench')
+   {
+       $workbench=TRUE;
+   }
+   if ($bits=='workbench-transparent')
+   {
+       $workbench=TRUE;
+       $transparent=TRUE;
+   }
+   if ($bits!=8 && $bits!=9 | $font_amiga)
+   {
+      $bits=8;
    }
 
 
