@@ -66,9 +66,7 @@ if (!@require_once(dirname(__FILE__).'/ansilove.cfg.php'))
 
 function sanitize_input($input)
 {
-   $input=ereg_replace("/","",$input);
-   $input=ereg_replace("%2f","",$input);
-   $input=ereg_replace("\.\.","",$input);
+   $input=preg_replace("/((\/+)|(\.\.)|(%2f))/","",$input);
 
    return $input;
 }
@@ -1031,7 +1029,7 @@ function load_pcboard($input,$output,$font,$bits)
 
    for ($loop=0;$loop<sizeof($pcboard_strip_codes_exploded);$loop++)
    {
-      $input_file_buffer=ereg_replace($pcboard_strip_codes_exploded[$loop],"",$input_file_buffer);
+      $input_file_buffer=preg_replace($pcboard_strip_codes_exploded[$loop],"",$input_file_buffer);
    }
 
 
