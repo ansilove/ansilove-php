@@ -330,13 +330,6 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
       $font_size_y=16;
       break;
 
-   case 'microknight8':
-      $font_amiga=TRUE;
-      $font_file='ansilove_font_amiga_microknight8.png';
-      $font_size_x=8;
-      $font_size_y=8;
-      break;
-
    case 'mosoul':
       $font_amiga=TRUE;
       $font_file='ansilove_font_amiga_mosoul.png';
