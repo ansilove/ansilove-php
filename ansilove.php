@@ -266,7 +266,6 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
       $font_file='ansilove_font_amiga_topaz_1200.png';
       $font_size_x=8;
       $font_size_y=16;
-      $bits=8;
       break;
 
    case 'b-strict':
@@ -380,12 +379,12 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
    }
    if ($bits=='workbench')
    {
-       $workbench=TRUE;
+      $workbench=TRUE;
    }
    if ($bits=='workbench-transparent')
    {
-       $workbench=TRUE;
-       $transparent=TRUE;
+      $workbench=TRUE;
+      $transparent=TRUE;
    }
    if ($bits!=8 && $bits!=9 | $font_amiga)
    {
