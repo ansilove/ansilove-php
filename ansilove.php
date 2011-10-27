@@ -255,6 +255,12 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
       $font_size_y=16;
       break;
 
+   case 'terminus':
+      $font_file='ansilove_font_pc_terminus.png';
+      $font_size_x=9;
+      $font_size_y=16;
+      break;
+
    case 'turkish':
       $font_file='ansilove_font_pc_turkish.png';
       $font_size_x=9;
