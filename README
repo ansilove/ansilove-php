@@ -128,6 +128,7 @@ PC fonts can be :    80x25 (Default, code page 437)
                      persian (Iran System encoding standard)
                      portuguese (Code page 860)
                      russian (Code page 866)
+                     terminus (Terminus font)
                      turkish (Code page 857)
 
 Bits can be : 8 (8-bit (Default)) or 9 (9-bit) or ced or thumbnail or
