@@ -2,11 +2,11 @@
 <?PHP
 /*****************************************************************************/
 /*                                                                           */
-/* Ansilove/PHP 1.08 (c) by Frederic Cambus 2003-2011                        */
+/* Ansilove/PHP 1.09 (c) by Frederic Cambus 2003-2011                        */
 /* http://ansilove.sourceforge.net                                           */
 /*                                                                           */
 /* Created:      2003/07/17                                                  */
-/* Last Updated: 2011/07/08                                                  */
+/* Last Updated: 2011/11/21                                                  */
 /*                                                                           */
 /* Ansilove is released under a MIT-style license.                           */
 /* See LICENSE file for details.                                             */
@@ -59,7 +59,7 @@ function show_usage()
 /* MAIN                                                                      */
 /*****************************************************************************/
 
-echo "-------------------------------------------------------------------------------\n              AnsiLove/PHP 1.08 (c) by Frederic CAMBUS 2003-2011\n-------------------------------------------------------------------------------\n\n";
+echo "-------------------------------------------------------------------------------\n              AnsiLove/PHP 1.09 (c) by Frederic CAMBUS 2003-2011\n-------------------------------------------------------------------------------\n\n";
 
 if (!require_once(dirname(__FILE__).'/ansilove.php'))
 {
