@@ -1007,7 +1007,56 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
       }
       else
       {
-         ImagePNG($ansi,$output);
+         if (!SPLIT)
+         {
+            ImagePNG($ansi,$output);
+         }
+         else
+         {
+            $image_size_y=$position_y_max*$font_size_y;
+            $split_size_y=SPLIT_HEIGHT;
+
+            $loop_max=($image_size_y/$split_size_y);
+
+            for ($loop=0; $loop<$loop_max; $loop++)
+            {
+               if (($image_size_y-($split_size_y*$loop))<$split_size_y)
+               {
+                  $height=($image_size_y-($split_size_y*$loop));
+               }
+               else
+               {
+                  $height=$split_size_y;
+               }
+
+               if (!$split = imagecreate($columns*$bits,$height))
+               {
+                  error("Can't allocate buffer image memory");
+               }
+
+               imagecolorallocate($split,0,0,0);
+               imagecopy($split,$ansi,0,0,0,($loop*$split_size_y),$columns*$bits,$height);
+
+               if ($loop_max>=1)
+               {
+                  $output_file=$output.SPLIT_SEPARATOR.str_pad($loop,4,"0",STR_PAD_LEFT).".png";
+               }
+               else
+               {
+                  $output_file=$output.".png";
+               }
+
+               $output_files[]=$output_file;
+
+               if ($transparent)
+               {
+                  imagecolortransparent($split,$background_canvas);
+               }
+
+               ImagePNG($split,$output_file);
+               imagedestroy($split);
+            }
+         }
       }
    }
 
@@ -1020,6 +1069,8 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
    imagedestroy($ansi);
    imagedestroy($background);
    imagedestroy($font);
+   
+   return $output_files;
 }
 
 
