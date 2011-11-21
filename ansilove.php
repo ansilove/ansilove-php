@@ -685,6 +685,8 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                      $color_background=0;
                      $color_foreground=7;
                      $bold=FALSE;
+                     $underline=FALSE;
+                     $italics=FALSE;
                      $blink=FALSE;
                   }
 
@@ -695,6 +697,16 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                         $color_foreground+=8;
 					 }
                      $bold=TRUE;
+                  }
+
+                  if ($ansi_sequence_value==3)
+                  {
+                     $italics=TRUE;
+                  }
+
+                  if ($ansi_sequence_value==4)
+                  {
+                     $underline=TRUE;
                   }
 
                   if ($ansi_sequence_value==5)
@@ -730,6 +742,17 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                $loop+=$ansi_sequence_loop+2;
                break;
             }
+
+/*****************************************************************************/
+/* CURSOR DE/ACTIVATION (AMIGA ANSI)                                         */
+/*****************************************************************************/
+
+            if ($ansi_sequence_character=='p')
+            {
+               $loop+=$ansi_sequence_loop+2;
+               break;
+            }
+
             $ansi_sequence.=$ansi_sequence_character;
          }
       }
