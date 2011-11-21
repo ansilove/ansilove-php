@@ -930,6 +930,56 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
          {
             imagecopy($ansi,$font,1+$position_x*$bits,$position_y*$font_size_y,$character*$font_size_x,$color_foreground*$font_size_y,$bits,$font_size_y);
          }
+
+         if ($underline)
+         {
+            $loop_column=0;
+            $character_size_x=8;
+
+            if ($bold)
+            {
+               $character_size_x++;
+            }
+
+            if ($italics)
+            {
+               $loop_column=-1;
+               $character_size_x=11;
+            }
+
+            while ($loop_column<$character_size_x)
+            {
+               if (imagecolorat($ansi,$position_x*$bits+$loop_column,$position_y*$font_size_y+15)==$color_background && imagecolorat($ansi,$position_x*$bits+$loop_column+1,$position_y*$font_size_y+15)==$color_background)
+               {
+                  imagesetpixel($ansi,$position_x*$bits+$loop_column,$position_y*$font_size_y+14,$colors[$color_foreground]);
+                  imagesetpixel($ansi,$position_x*$bits+$loop_column,$position_y*$font_size_y+15,$colors[$color_foreground]);
+               }
+               else if (imagecolorat($ansi,$position_x*$bits+$loop_column,$position_y*$font_size_y+15)!=$color_background && imagecolorat($ansi,$position_x*$bits+$loop_column+1,$position_y*$font_size_y+15)==$color_background)
+               {
+                  $loop_column++;
+               }
+               
+               $loop_column++;
+            }
+
+            if ($pixel_carry)
+            {
+               imagesetpixel($ansi,$position_x*$bits,$position_y*$font_size_y+14,$colors[$color_foreground]);
+               imagesetpixel($ansi,$position_x*$bits,$position_y*$font_size_y+15,$colors[$color_foreground]);
+               $pixel_carry=FALSE;
+            }
+
+            if (imagecolorat($font,$character*$font_size_x,$color_foreground*$font_size_y+15)!=20)
+            {
+               imagesetpixel($ansi,$position_x*$bits-1,$position_y*$font_size_y+14,$colors[$color_foreground]);
+               imagesetpixel($ansi,$position_x*$bits-1,$position_y*$font_size_y+15,$colors[$color_foreground]);
+            }
+
+            if (imagecolorat($font,$character*$font_size_x+$character_size_x-1,$color_foreground*$font_size_y+15)!=20)
+            {
+               $pixel_carry=TRUE;
+            }
+         }
       }
    }
 
