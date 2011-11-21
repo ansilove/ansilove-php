@@ -892,8 +892,45 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
       $position_x=ord($ansi_buffer[$loop+6]);
       $position_y=ord($ansi_buffer[$loop+7])+(ord($ansi_buffer[$loop+8])<<8);
 
-      imagecopy($ansi,$background,$position_x*$bits,$position_y*$font_size_y,$color_background*9,0,$bits,$font_size_y);
-      imagecopy($ansi,$font,$position_x*$bits,$position_y*$font_size_y,$character*$font_size_x,$color_foreground*$font_size_y,$bits,$font_size_y);
+      if (!$font_amiga)
+      {
+         imagecopy($ansi,$background,$position_x*$bits,$position_y*$font_size_y,$color_background*9,0,$bits,$font_size_y);
+         imagecopy($ansi,$font,$position_x*$bits,$position_y*$font_size_y,$character*$font_size_x,$color_foreground*$font_size_y,$bits,$font_size_y);
+      }
+      else
+      {
+         if ($color_background!=0 || !$italics)
+         {
+            imagecopy($ansi,$background,$position_x*$bits,$position_y*$font_size_y,$color_background*9,0,$bits,$font_size_y);
+         }
+
+         if (!$italics)
+         {
+            imagecopy($ansi,$font,$position_x*$bits,$position_y*$font_size_y,$character*$font_size_x,$color_foreground*$font_size_y,$bits,$font_size_y);
+         }
+         else
+         {
+            imagecopy($ansi,$font,$position_x*$bits+3,$position_y*$font_size_y,$character*$font_size_x,$color_foreground*$font_size_y,$bits,2);
+            imagecopy($ansi,$font,$position_x*$bits+2,$position_y*$font_size_y+2,$character*$font_size_x,$color_foreground*$font_size_y+2,$bits,4);
+            imagecopy($ansi,$font,$position_x*$bits+1,$position_y*$font_size_y+6,$character*$font_size_x,$color_foreground*$font_size_y+6,$bits,4);
+            imagecopy($ansi,$font,$position_x*$bits,$position_y*$font_size_y+10,$character*$font_size_x,$color_foreground*$font_size_y+10,$bits,4);
+            imagecopy($ansi,$font,$position_x*$bits-1,$position_y*$font_size_y+14,$character*$font_size_x,$color_foreground*$font_size_y+14,$bits,2);
+         }
+            
+         if ($italics && $bold)
+         {
+            imagecopy($ansi,$font,$position_x*$bits+3+1,$position_y*$font_size_y,$character*$font_size_x,$color_foreground*$font_size_y,$bits,2);
+            imagecopy($ansi,$font,$position_x*$bits+2+1,$position_y*$font_size_y+2,$character*$font_size_x,$color_foreground*$font_size_y+2,$bits,4);
+            imagecopy($ansi,$font,$position_x*$bits+1+1,$position_y*$font_size_y+6,$character*$font_size_x,$color_foreground*$font_size_y+6,$bits,4);
+            imagecopy($ansi,$font,$position_x*$bits+1,$position_y*$font_size_y+10,$character*$font_size_x,$color_foreground*$font_size_y+10,$bits,4);
+            imagecopy($ansi,$font,$position_x*$bits-1+1,$position_y*$font_size_y+14,$character*$font_size_x,$color_foreground*$font_size_y+14,$bits,2);
+         }
+
+         if ($bold && !$italics)
+         {
+            imagecopy($ansi,$font,1+$position_x*$bits,$position_y*$font_size_y,$character*$font_size_x,$color_foreground*$font_size_y,$bits,$font_size_y);
+         }
+      }
    }
 
 
