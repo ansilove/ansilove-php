@@ -1,3 +1,1 @@
-- Add an option to split the output into several PNG files
-- Add support for Amiga ansi (Bold, Italics, Underlined characters)
-- Optimize memory usage
+- More testing for underlined characters rendering (Amiga ANSI)

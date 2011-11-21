@@ -7,6 +7,18 @@
           |______/    _ __ __________ \/ _______ \/ ________ __ _  yop \/
 
 
+Ansilove/PHP 1.09 (2011-11-22)
+
+- Added functions in the ANSi loader to split the output into several PNG files
+  (SPLIT_* options in the config file)
+- Added support for Amiga ANSi (Bold, Italics, and Underlined characters)
+- Memory usage optimization (Some data structures modified, support for 65535
+  lines of text)
+- Relicensed under a MIT-style license
+- Added Terminus font support (http://terminus-font.sourceforge.net)
+
+
+
 Ansilove/PHP 1.08 (2011-07-12)
 
 - Added new improved Amiga fonts (With corrected aspect ratio and 100% accurate
