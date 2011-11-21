@@ -779,13 +779,20 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 /* WRITE CURRENT CHARACTER INFO IN A TEMPORARY ARRAY                         */
 /*****************************************************************************/
 
-         $ansi_buffer[]=$position_x;
-         $ansi_buffer[]=$position_y;
-         $ansi_buffer[]=$color_background;
-         $ansi_buffer[]=$color_foreground;
-         $ansi_buffer[]=$current_character;
+         if (!$font_amiga || ($current_character!=12 && $current_character!=13))
+         {
+            $ansi_buffer.=chr($color_background);
+            $ansi_buffer.=chr($color_foreground);
+            $ansi_buffer.=chr($current_character);
+            $ansi_buffer.=chr($bold);
+            $ansi_buffer.=chr($italics);
+            $ansi_buffer.=chr($underline);
+            $ansi_buffer.=chr($position_x);
+            $ansi_buffer.=chr($position_y & 0xFF);
+            $ansi_buffer.=chr($position_y>>8);
 
-         $position_x++;
+            $position_x++;
+         }
       }
       $loop++;
    }
@@ -874,13 +881,16 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 /* RENDER ANSI                                                               */
 /*****************************************************************************/
 
-   for ($loop=0;$loop<sizeof($ansi_buffer);$loop+=5)
+   for ($loop=0;$loop<strlen($ansi_buffer);$loop+=9)
    {
-      $position_x=$ansi_buffer[$loop];
-      $position_y=$ansi_buffer[$loop+1];
-      $color_background=$ansi_buffer[$loop+2];
-      $color_foreground=$ansi_buffer[$loop+3];
-      $character=$ansi_buffer[$loop+4];
+      $color_background=ord($ansi_buffer[$loop]);
+      $color_foreground=ord($ansi_buffer[$loop+1]);
+      $character=ord($ansi_buffer[$loop+2]);
+      $bold=ord($ansi_buffer[$loop+3]);
+      $italics=ord($ansi_buffer[$loop+4]);
+      $underline=ord($ansi_buffer[$loop+5]);
+      $position_x=ord($ansi_buffer[$loop+6]);
+      $position_y=ord($ansi_buffer[$loop+7])+(ord($ansi_buffer[$loop+8])<<8);
 
       imagecopy($ansi,$background,$position_x*$bits,$position_y*$font_size_y,$color_background*9,0,$bits,$font_size_y);
       imagecopy($ansi,$font,$position_x*$bits,$position_y*$font_size_y,$character*$font_size_x,$color_foreground*$font_size_y,$bits,$font_size_y);
