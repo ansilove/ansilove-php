@@ -875,6 +875,13 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
       $background_canvas=imagecolorallocate($ansi,0,0,0);
    }
 
+   for ($loop=0; $loop<16; $loop++)
+   {
+	  /* Generating ANSI colors array in order to be able to draw underlines */
+      $color_index=imagecolorsforindex($background,$loop);
+      $colors[$loop]=imagecolorallocate($ansi,$color_index['red'],$color_index['green'],$color_index['blue']);
+   }
+
 
 
 /*****************************************************************************/
