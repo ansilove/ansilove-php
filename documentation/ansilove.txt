@@ -1,0 +1,625 @@
+Ansilove
+========
+:Author:    Frederic Cambus
+:Date:      2011-12-05
+:Revision:  1.09
+
+Description
+-----------
+
+*Ansilove* is a set of tools to convert ANSi and artscene-related file formats into *PNG* images, supporting *ANSi* (.ANS), *PCBOARD* (.PCB), *BiNARY* (.BIN), *ADF* (.ADF), *iDF* (.IDF), *TUNDRA* (.TND) and *XBiN* (.XB) formats.
+
+It includes an all purposes *command line converter*, along with a *library* to use on web pages for doing *"on the fly"* conversions. It creates size optimized *4-bit PNG* files and supports *SAUCE* (Standard Architecture for Universal Comment Extentions), 80x25 and 80x50 PC fonts (including all the 14 *MS-DOS charsets* and some unofficial ones), Amiga fonts, and iCE colors.
+
+It is written in *PHP*, and can thus be run on any supported system : the command line converter can be used under *Linux*, *Mac OS X*, *Windows*, and so far and so on.
+
+IMPORTANT: Ansilove doesn't require any Web server : you can use the bundled command line converter to convert files locally on your computer.
+
+Features
+~~~~~~~~
+
+- ANSi (.ANS) format support
+- PCBOARD (.PCB) format support
+- BiNARY (.BIN) format support
+- ADF (.ADF) format support (Artworx)
+- iDF (.IDF) format support (iCE Draw)
+- TUNDRA (.TND) format support - http://tundradraw.sourceforge.net
+- XBiN (.XB) format support - http://www.acid.org/info/xbin/xbin.htm
+- Small output file size (4-bit PNG)
+- SAUCE (Standard Architecture for Universal Comment Extentions)
+- 80x25 font support
+- 80x50 font support
+- Amiga font support
+- iCE colors support
+
+Supported charsets
+~~~~~~~~~~~~~~~~~~
+
+- IBM PC (Code page 437)
+- Baltic (Code page 775)
+- Cyrillic (Code page 855)
+- French Canadian (Code page 863)
+- Greek (Code pages 737 and 869)
+- Hebrew (Code page 862)
+- Icelandic (Code page 861)
+- Latin-1 (Code page 850)
+- Latin-2 (Code page 852)
+- Nordic (Code page 865)
+- Portuguese (Code page 860)
+- Russian (Code page 866)
+- Turkish (Code page 857)
+
+Supported unofficial charsets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Armenian
+- Persian (Iran System encoding standard)
+
+Requirements
+------------
+
+*Ansilove* requires 'PHP' with the 'GD' module installed. If you want to convert huge files, you may have to increase the 'memory_limit size' in your 'php.ini' file.
+
+Installation
+------------
+
+Using tarballs
+~~~~~~~~~~~~~~
+
+----
+wget http://downloads.sourceforge.net/project/ansilove/ansilove-php/1.09/ansilove-php-1.09.tar.gz
+tar xvfz ansilove-php-1.09.tar.gz
+----
+
+Using Git
+~~~~~~~~~
+
+----
+git clone git@github.com:fcambus/ansilove.git
+----
+
+IMPORTANT: Under Windows people must install the PHP binaries : the easiest way is to use the '.exe' installer and enable the GD library. 
+
+Configuration options
+----------------------
+
+The configuration options are defined in the 'ansilove.cfg.php' file. 
+
+Options list
+~~~~~~~~~~~~
+
+* ANSILOVE_FILES_DIRECTORY
+
+****
+Defines the directory where all the files to be rendered must be placed when using the library online to do "on the fly" conversions. Default value : 'ansis/'
+****
+
+* ANSILOVE_LOG_FILE
+
+****
+Defines the log file used by the error message logger. Default value : 'ansilove.log'
+****
+
+* PCBOARD_STRIP_CODES
+
+****
+Defines a serie of comma separated values containing PCBoard codes to be stripped from the output.
+
+Default value : "@POFF@,@WAIT@", which means all '@POFF@' and '@WAIT@' codes will be stripped.
+****
+
+* DIZ_EXTENSIONS
+
+****
+Defines a serie of comma separated values specifying which files to render in DIZ mode. Default value : ".diz,.ion"
+****
+
+* SUBSTITUTE_BREAK
+
+****
+Whether or not stop rendering input files when the substitute (SUB) character is encountered. Default value : '1' (*ENABLED*)
+****
+
+* WRAP_COLUMN_80
+
+****
+Whether or not enable 80th column wrapping. Default value : '1' (*ENABLED*)
+****
+
+* CED_BACKGROUND_COLOR
+
+****
+Defines RGB values of the CED mode background color.
+****
+
+* CED_FOREGROUND_COLOR
+
+****
+Defines RGB values of the CED mode foreground color.
+****
+
+* WORKBENCH_COLOR
+
+****
+Defines RGB values of the WorkBench mode colors.
+****
+
+* THUMBNAILS_SIZE
+
+****
+Defines thumbnails size multiplicator. Default value : '1' (will produce 80 pixels width output)
+****
+
+* THUMBNAILS_HEIGHT
+
+****
+Defines maximum thumbnails height (in pixels). Default value : '0' (will produce full height output)
+****
+
+* THUMBNAILS_TAG
+
+****
+Defines the tag added to the output file name. Default value : '-thumbnail'
+****
+
+* SPLIT
+
+****
+Whether or not split output in multiple images files. Default value : '0' (*DISABLED*)
+****
+
+* SPLIT_HEIGHT
+
+****
+Define the height (in pixels) of each splitted pictures. Default value : '4096'
+****
+
+* SPLIT_SEPARATOR
+
+****
+Defines the separator used in output file names. Default value : '.'
+****
+
+Supported options for each file format
+--------------------------------------
+
+[grid="rows",format="csv"]
+[options="header",cols="^,^,^,^,^"]
+|===========================
+Format,columns,font,bits,icecolors
+ANS,,X,X,X
+PCB,,X,X,X
+BIN,X,X,X,X
+ADF,,,,
+IDF,,,,
+TND,,X,X,
+XB,,,,
+|===========================
+
+Command line converter
+----------------------
+
+The command line converter can be invoked by typing : 
+
+----
+./ansilove
+----
+
+NOTE: Windows users should use the bundled 'ansilove.bat' file.
+
+CAUTION: Check the file header to ensure the path of your PHP interpreter is correct : Ansilove uses /usr/bin/php as default.
+
+Usage
+~~~~~
+
+----
+ansilove inputfile columns font bits icecolors
+----
+
+NOTE: If no options are specified, default settings are used : 80x25, 8-bit font and iCE colors turned off. If no columns are specified for .BIN, default value is 160.
+
+
+Columns options
+~~~~~~~~~~~~~~~
+
+IMPORTANT: Used for '.BIN' files only. Skip this option when converting other formats.
+
+Font options
+~~~~~~~~~~~~
+
+- 80x25
+- 80x50
+- PC or Amiga fonts (8-bit font only)
+
+Amiga fonts options
+^^^^^^^^^^^^^^^^^^^
+
+- amiga (alias to Topaz)
+- b-strict (Original B-Strict font)
+- b-struct (Original B-Struct font)
+- microknight (Original MicroKnight version)
+- microknight+ (Modified MicroKnight version)
+- microknightplus (alias to MicroKnight + to be used in URLs)
+- mosoul (Original mO'sOul font)
+- pot-noodle (Original P0T-NOoDLE font)
+- topaz (Original Topaz Kickstart 2.x version)
+- topaz+ (Modified Topaz Kickstart 2.x+ version)
+- topazplus (alias to Topaz+ to be used in URLs)
+- topaz500 (Original Topaz Kickstart 1.x version)
+- topaz500+ (Modified Topaz Kickstart 1.x version)
+- topaz500plus (alias to Topaz500+ to be used in URLs)
+
+NOTE: All the amiga fonts come from the excellent http://spetsnaz.su/dmg/files/fonts/t!s-af10.zip[Amiga bitmap fonts] package by dMG.
+
+PC fonts options
+^^^^^^^^^^^^^^^^
+
+- 80x25 (Default, code page 437)
+- 80x50 (Code page 437, 80x50 mode)
+- armenian
+- baltic (Code page 775)
+- cyrillic (Code page 855)
+- french-canadian (Code page 863)
+- greek (Code page 737)
+- greek-869 (Code page 869)
+- hebrew (Code page 862)
+- icelandic (Code page 861)
+- latin1 (Code page 850)
+- latin2 (Code page 852)
+- nordic (Code page 865)
+- persian (Iran System encoding standard)
+- portuguese (Code page 860)
+- russian (Code page 866)
+- terminus (Terminus font)
+- turkish (Code page 857)
+
+Bits options
+~~~~~~~~~~~~
+
+- 8 (8-bit)
+
+****
+Default rendering mode.
+****
+
+- 9 (9-bit)
+
+****
+Renders the 9th column of block characters, causing the output to look like it's displayed in real textmode.
+****
+
+- ced
+
+****
+Renders files in black on gray, and limit the output to 78 columns (only available in ANSi loader).
+
+Used together with an Amiga font, the output will look like it is displayed on Amiga.
+****
+
+NOTE: It is possible to set custom RGB values by modifying the predefined constants 'CED_BACKGROUND_COLOR' and 'CED_FOREGROUND_COLOR' in the configuration file.
+
+- thumbnail
+
+****
+Generate thumbnail, using the full length picture by default.
+****
+
+NOTE: You can adjust the maximum height and the output size by changing the 'THUMBNAILS_HEIGHT' and 'THUMBNAILS_SIZE' options in the configuration file.
+NOTE: It is also possible to change the tag added to the output file name by changing the 'THUMBNAILS_TAG' option in the configuration file.
+
+- transparent
+
+****
+Renders files with transparent background (only available in ANSi loader).
+****
+
+- workbench
+
+****
+Renders files using Amiga Workbench colors (only available in ANSi loader).
+****
+
+NOTE: It is possible to set custom RGB values by modifying the predefined constants 'WORKBENCH_COLOR' in the configuration file.
+
+iCE colors options
+~~~~~~~~~~~~~~~~~~
+
+- 0 (turned *OFF*)
+- 1 (turned *ON*)
+
+Examples
+~~~~~~~~
+
+----
+ansilove ansi.ans
+ansilove ansi.ans 80x25 9 (80x25 font, 9-bit)
+ansilove ansi.ans 80x25 thumbnail (80x25 font, thumbnail rendering)
+ansilove ansi.ans 80x50 9 (80x50 font, 9-bit)
+ansilove ansi.ans russian 9 (Russian font, 9-bit)
+ansilove ansi.ans amiga (Amiga font)
+----
+
+----
+ansilove pcboard.pcb
+ansilove pcboard.pcb 80x25 9 (80x25 font, 9-bit)
+ansilove pcboard.pcb 80x25 thumbnail (80x25 font, thumbnail rendering)
+----
+
+----
+ansilove binary.bin 160
+ansilove binary.bin 160 80x25 9 (80x25 font, 9-bit)
+ansilove binary.bin 160 80x25 thumbnail (80x25 font, thumbnail rendering)
+ansilove binary.bin 160 80x50 9 (80x50 font, 9-bit)
+----
+
+----
+ansilove adf.adf
+ansilove adf.adf thumbnail (thumbnail rendering)
+----
+
+----
+ansilove idf.idf
+ansilove idf.idf thumbnail (thumbnail rendering)
+----
+
+----
+ansilove tundra.tnd
+ansilove tundra.tnd 80x25 9 (80x25 font, 9-bit)
+ansilove tundra.tnd 80x25 thumbnail (80x25 font, thumbnail rendering)
+----
+
+----
+ansilove xbin.xb
+ansilove xbin.xb thumbnail (thumbnail rendering)
+----
+
+IMPORTANT: Files with a .DIZ extension are rendered with the exact needed number of columns. White spaces and empty lines at the beginning and end of DIZ files are stripped from the output. 
+
+NOTE: You can customize file extensions definitions in the configuration fileby modifying the predefined constant called 'DIZ_EXTENSIONS' 
+
+Library usage for doing on the fly conversions on web pages
+-----------------------------------------------------------
+
+Using Ansilove library for doing "on the fly" conversions on Web pages, can be done using these loaders :
+
+- load_ansi.php
+- load_pcboard.php
+- load_bin.php
+- load_adf.php
+- load_idf.php
+- load_tundra.php
+- load_xbin.php
+
+Upload the loaders you plan to use, the library 'ansilove.php', the config file 'ansilove.cfg.php', along with the 'fonts' directory somewhere on your web site.
+
+For security issues, all the files to be rendered must be placed in a directory, which is 'ansis/' by default (the ending slash is required). This value is defined in the configuration file by the 'ANSILOVE_FILES_DIRECTORY' constant.
+
+CAUTION: Do *NOT* unset the 'ANSILOVE_FILES_DIRECTORY' constant, else it'll be possible to convert files laying in the same directory than the loaders, which could lead to possible security leaks.
+
+IMPORTANT: Please note that the input is sanitized, so it is impossible to use / and .. in paths.
+
+Including custom image tags in HTML code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[source,html]
+----
+<img src="load_ansi.php?input=ansi.ans">
+<img src="load_ansi.php?input=ansi.ans&font=80x25&bits=9">
+<img src="load_ansi.php?input=ansi.ans&font=80x25&bits=thumbnail">
+<img src="load_ansi.php?input=ansi.ans&font=russian">
+<img src="load_ansi.php?input=ansi.ans&font=russian&bits=9">
+<img src="load_ansi.php?input=ansi.ans&font=amiga">
+<img src="load_ansi.php?input=ansi.ans&font=80x50&bits=9">
+<img src="load_ansi.php?input=ansi.ans&font=80x25&bits=9&icecolors=1">
+----
+
+[source,html]
+----
+<img src="load_pcboard.php?input=pcboard.pcb">
+<img src="load_pcboard.php?input=pcboard.pcb&font=80x25&bits=9">
+<img src="load_pcboard.php?input=pcboard.pcb&font=80x25&bits=thumbnail">
+<img src="load_pcboard.php?input=pcboard.pcb&font=russian">
+<img src="load_pcboard.php?input=pcboard.pcb&font=russian&bits=9">
+<img src="load_pcboard.php?input=pcboard.pcb&font=amiga">
+<img src="load_pcboard.php?input=pcboard.pcb&font=80x50&bits=9">
+<img src="load_pcboard.php?input=pcboard.pcb&font=80x25&bits=9&icecolors=1">
+----
+
+[source,html]
+----
+<img src="load_binary.php?input=binary.bin&columns=160">
+<img src="load_binary.php?input=binary.bin&columns=160&font=80x25&bits=9">
+<img src="load_binary.php?input=binary.bin&columns=160&font=80x25&bits=thumbnail">
+<img src="load_binary.php?input=binary.bin&columns=160&font=80x50&bits=9">
+<img src="load_binary.php?input=binary.bin&columns=160&font=80x25&bits=9&icecolors=1">
+----
+
+[source,html]
+----
+<img src="load_adf.php?input=adf.adf">
+<img src="load_adf.php?input=adf.adf&bits=thumbnail">
+----
+
+[source,html]
+----
+<img src="load_idf.php?input=idf.idf">
+<img src="load_idf.php?input=idf.idf&bits=thumbnail">
+----
+
+[source,html]
+----
+<img src="load_tundra.php?input=tundra.tnd">
+<img src="load_tundra.php?input=tundra.tnd&font=80x25&bits=9">
+<img src="load_tundra.php?input=tundra.tnd&font=80x25&bits=thumbnail">
+----
+
+[source,html]
+----
+<img src="load_xbin.php?input=xbin.xb">
+<img src="load_xbin.php?input=xbin.xb&bits=thumbnail">
+----
+
+TIP: Check 'examples/ansilove.html' to see the library in action.
+
+NOTE: If you want your HTML code to validate correctly, you should replace the '&' characters by '\&amp;' and add an 'alt' element to the 'img' tags.
+
+Library usage
+-------------
+
+It is also possible to use the library in your PHP applications or scripts :
+
+Loading 'ansilove.php' library in your PHP source
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----
+require_once('ansilove.php');
+----
+
+Calling the adequate loaders to convert input files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----
+load_ansi($input,$output,$font,$bits,$icecolors);
+----
+
+----
+load_pcboard($input,$output,$font,$bits,$icecolors);
+----
+
+----
+load_binary($input,$output,$columns,$font,$bits,$icecolors);
+----
+
+----
+load_adf($input,$output);
+----
+
+----
+load_idf($input,$output);
+----
+
+----
+load_tundra($input,$output,$font,$bits);
+----
+
+----
+load_xbin($input,$output);
+----
+
+Retrieve SAUCE Informations
+---------------------------
+
+Retrieving SAUCE informations from files can be done using the 'load_sauce' function :
+
+Loading 'ansilove.php' library in your PHP source
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----
+require_once('ansilove.php');
+----
+
+Loading sauce informations
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----
+$sauce=load_sauce($input_file_name);
+----
+
+The 'load_sauce' function will return an array containing the SAUCE informations :
+
+----
+Array
+(
+    [ID] => SAUCE
+    [Version] => 00
+    [Title] => Title
+    [Author] => Author
+    [Group] => Group
+    [Date] => 19970621
+    [FileSize] => 1997
+    [DataType] => 1
+    [FileType] => 1
+    [TInfo1] => 80
+    [TInfo2] => 29
+    [TInfo3] => 0
+    [TInfo4] => 0
+    [Comments] => 10
+    [Flags] => 0
+    [Filler] =>
+    [Comment_Line_01] => Comment Line
+    [...]
+    [Comment_Line_255] => Comment Line
+)
+----
+
+NOTE: You can find detailed informations about SAUCE (including full specifications) here : http://www.acid.org/info/sauce/sauce.htm
+
+License
+-------
+
+Ansilove is released under a MIT-style license. See 'LICENSE' file for details.
+
+----
+Copyright (c) 2003-2011, Frederic Cambus
+Ansilove™ is a trademark of Frederic Cambus.
+http://ansilove.sourceforge.net
+All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction except as noted below, including without
+limitation the rights to use, copy, modify, merge, publish, distribute, and/or
+sublicense, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+- The Software and/or source code cannot be copied in whole and sold without
+  meaningful modification for a profit. 
+
+- The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+- Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+- Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+----
+
+Distribution
+------------
+
+If you want to add an Ansilove download link on your page, please use the following download link :
+
+----
+http://sourceforge.net/projects/ansilove/files/
+----
+
+Ansilove is now also available on GitHub :
+
+----
+https://github.com/fcambus/ansilove
+----
+
+Support and Donations
+---------------------
+
+Ansilove is the result of countless hours of coding and testing, in order to provide the most accurate possible *ANSi* and *ASCii* conversion tool. If you find this program useful, please consider making a donation, thank you <3
+
+Contact
+-------
+Project Homepage : http://ansilove.sourceforge.net
+
+Sister project : http://www.ascii-codes.com
+
+For bug report, feedback, or any other reasons, please write at the following address :
+----
+Frederic Cambus <fcambus AT users DOT sourceforge DOT net>
+----
