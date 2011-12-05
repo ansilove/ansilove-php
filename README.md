@@ -51,21 +51,21 @@ line converter to convert files locally on your computer.
 
 ## Supported charsets
 
-  IBM PC (Code page 437)
-  Baltic (Code page 775)
-  Cyrillic (Code page 855)
-  French Canadian (Code page 863)
-  Greek (Code pages 737 and 869)
-  Hebrew (Code page 862)
-  Icelandic (Code page 861)
-  Latin-1 (Code page 850)
-  Latin-2 (Code page 852)
-  Nordic (Code page 865)
-  Portuguese (Code page 860)
-  Russian (Code page 866)
-  Turkish (Code page 857)
-  Armenian
-  Persian (Iran System encoding standard)
+- IBM PC (Code page 437)
+- Baltic (Code page 775)
+- Cyrillic (Code page 855)
+- French Canadian (Code page 863)
+- Greek (Code pages 737 and 869)
+- Hebrew (Code page 862)
+- Icelandic (Code page 861)
+- Latin-1 (Code page 850)
+- Latin-2 (Code page 852)
+- Nordic (Code page 865)
+- Portuguese (Code page 860)
+- Russian (Code page 866)
+- Turkish (Code page 857)
+- Armenian
+- Persian (Iran System encoding standard)
 
 # License
 
