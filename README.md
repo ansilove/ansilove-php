@@ -1,18 +1,18 @@
-         _______         ___________          ___
-       __\___   \_  ____/     /\   /______ ___\_/__            /\
-      /    \|     \/  _ \    /--\_____    \\   /  /\          /  \
-    _/      |     /    \     \      |/     /      \ \ _ _____/    \_______
-    \       |_____\____/     /      /      \____  /\/                    /
-     \______|      \  \_____/\______       /\   \/  \   /\NSILOVE 1.09  /____ _
-      \     |_______\__\___ \ \    \      /  \___\__/____
-       \____|        /____/\_\/\__ /     / __/___ \     /\    ____
-                     \    \ \     /     /_/ __   \/    /__\__/  _/ _____ ___
-                 /\   \____\/    /     //   \    /    /    /    _>/    //__/\
-                /  \           _/      \   //   /    /    /     \/    / \__\/
-_ _________    /    \_______ _ \___    /_______/    /   _/ \____      \  /
-           \  /                 \ \___/\       \_______/\\  \  \______/\/
-            \/                   \_\  \ \_______\      \ \\/ \__\     \ \
-                                    \__\/        \______\/ h7/dS!\_____\/
+	         _______         ___________          ___
+	       __\___   \_  ____/     /\   /______ ___\_/__            /\
+	      /    \|     \/  _ \    /--\_____    \\   /  /\          /  \
+	    _/      |     /    \     \      |/     /      \ \ _ _____/    \_______
+	    \       |_____\____/     /      /      \____  /\/                    /
+	     \______|      \  \_____/\______       /\   \/  \   /\NSILOVE 1.09  /____ _
+	      \     |_______\__\___ \ \    \      /  \___\__/____
+	       \____|        /____/\_\/\__ /     / __/___ \     /\    ____
+	                     \    \ \     /     /_/ __   \/    /__\__/  _/ _____ ___
+	                 /\   \____\/    /     //   \    /    /    /    _>/    //__/\
+	                /  \           _/      \   //   /    /    /     \/    / \__\/
+	_ _________    /    \_______ _ \___    /_______/    /   _/ \____      \  /
+	           \  /                 \ \___/\       \_______/\\  \  \______/\/
+	            \/                   \_\  \ \_______\      \ \\/ \__\     \ \
+	                                    \__\/        \______\/ h7/dS!\_____\/
 
 # Description
 
@@ -40,8 +40,8 @@ line converter to convert files locally on your computer.
 - BiNARY (.BIN) format support
 - ADF (.ADF) format support (Artworx)
 - iDF (.IDF) format support (iCE Draw)
-- TUNDRA (.TND) format support (http://tundradraw.sourceforge.net)
-- XBiN (.XB) format support (http://www.acid.org/info/xbin/xbin.htm)
+- TUNDRA (.TND) format support
+- XBiN (.XB) format support
 - Small output file size (4-bit PNG)
 - SAUCE (Standard Architecture for Universal Comment Extentions)
 - 80x25 font support
@@ -69,9 +69,9 @@ line converter to convert files locally on your computer.
 
 # License
 
-Ansilove is released under a MIT-style license. See LICENSE file for details.
+Ansilove is released under a MIT-style license. See `LICENSE` file for details.
 
-# CONTACT
+# Contact
 
 Project Homepage : http://ansilove.sourceforge.net
 
