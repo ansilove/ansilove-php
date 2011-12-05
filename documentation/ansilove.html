@@ -1,0 +1,1784 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.4" />
+<title>Ansilove</title>
+<style type="text/css">
+/* Sans-serif font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+div#toctitle,
+span#author, span#revnumber, span#revdate, span#revremark,
+div#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+/* Serif font. */
+div.sectionbody {
+  font-family: Georgia,"Times New Roman",Times,serif;
+}
+
+/* Monospace font. */
+tt {
+  font-size: inherit;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+tt {
+  font-size: inherit;
+  color: navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+span#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+span#email {
+}
+span#revnumber, span#revdate, span#revremark {
+}
+
+div#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+div#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+div#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+div#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.tableblock, div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #777777;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  div#footer-badges { display: none; }
+}
+
+div#toc {
+  margin-bottom: 2.5em;
+}
+
+div#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+window.onload = function(){asciidoc.footnotes(); asciidoc.toc(2);}
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  var cont = document.getElementById("content");
+  var noteholder = document.getElementById("footnotes");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      // Use [\s\S] in place of . so multi-line matches work.
+      // Because JavaScript has no s (dotall) regex flag.
+      note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      spans[i].innerHTML =
+        "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+        "' title='View footnote' class='footnote'>" + n + "</a>]";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+}
+
+}
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>Ansilove</h1>
+<span id="author">Frederic Cambus</span><br />
+<span id="revnumber">version 1.09,</span>
+<span id="revdate">2011-12-05</span>
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_description">Description</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><strong>Ansilove</strong> is a set of tools to convert ANSi and artscene-related file formats into <strong>PNG</strong> images, supporting <strong>ANSi</strong> (.ANS), <strong>PCBOARD</strong> (.PCB), <strong>BiNARY</strong> (.BIN), <strong>ADF</strong> (.ADF), <strong>iDF</strong> (.IDF), <strong>TUNDRA</strong> (.TND) and <strong>XBiN</strong> (.XB) formats.</p></div>
+<div class="paragraph"><p>It includes an all purposes <strong>command line converter</strong>, along with a <strong>library</strong> to use on web pages for doing <strong>"on the fly"</strong> conversions. It creates size optimized <strong>4-bit PNG</strong> files and supports <strong>SAUCE</strong> (Standard Architecture for Universal Comment Extentions), 80x25 and 80x50 PC fonts (including all the 14 <strong>MS-DOS charsets</strong> and some unofficial ones), Amiga fonts, and iCE colors.</p></div>
+<div class="paragraph"><p>It is written in <strong>PHP</strong>, and can thus be run on any supported system : the command line converter can be used under <strong>Linux</strong>, <strong>Mac OS X</strong>, <strong>Windows</strong>, and so far and so on.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/important.png" alt="Important" />
+</td>
+<td class="content">Ansilove doesn&#8217;t require any Web server : you can use the bundled command line converter to convert files locally on your computer.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_features">Features</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+ANSi (.ANS) format support
+</p>
+</li>
+<li>
+<p>
+PCBOARD (.PCB) format support
+</p>
+</li>
+<li>
+<p>
+BiNARY (.BIN) format support
+</p>
+</li>
+<li>
+<p>
+ADF (.ADF) format support (Artworx)
+</p>
+</li>
+<li>
+<p>
+iDF (.IDF) format support (iCE Draw)
+</p>
+</li>
+<li>
+<p>
+TUNDRA (.TND) format support - <a href="http://tundradraw.sourceforge.net">http://tundradraw.sourceforge.net</a>
+</p>
+</li>
+<li>
+<p>
+XBiN (.XB) format support - <a href="http://www.acid.org/info/xbin/xbin.htm">http://www.acid.org/info/xbin/xbin.htm</a>
+</p>
+</li>
+<li>
+<p>
+Small output file size (4-bit PNG)
+</p>
+</li>
+<li>
+<p>
+SAUCE (Standard Architecture for Universal Comment Extentions)
+</p>
+</li>
+<li>
+<p>
+80x25 font support
+</p>
+</li>
+<li>
+<p>
+80x50 font support
+</p>
+</li>
+<li>
+<p>
+Amiga font support
+</p>
+</li>
+<li>
+<p>
+iCE colors support
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_supported_charsets">Supported charsets</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+IBM PC (Code page 437)
+</p>
+</li>
+<li>
+<p>
+Baltic (Code page 775)
+</p>
+</li>
+<li>
+<p>
+Cyrillic (Code page 855)
+</p>
+</li>
+<li>
+<p>
+French Canadian (Code page 863)
+</p>
+</li>
+<li>
+<p>
+Greek (Code pages 737 and 869)
+</p>
+</li>
+<li>
+<p>
+Hebrew (Code page 862)
+</p>
+</li>
+<li>
+<p>
+Icelandic (Code page 861)
+</p>
+</li>
+<li>
+<p>
+Latin-1 (Code page 850)
+</p>
+</li>
+<li>
+<p>
+Latin-2 (Code page 852)
+</p>
+</li>
+<li>
+<p>
+Nordic (Code page 865)
+</p>
+</li>
+<li>
+<p>
+Portuguese (Code page 860)
+</p>
+</li>
+<li>
+<p>
+Russian (Code page 866)
+</p>
+</li>
+<li>
+<p>
+Turkish (Code page 857)
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_supported_unofficial_charsets">Supported unofficial charsets</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+Armenian
+</p>
+</li>
+<li>
+<p>
+Persian (Iran System encoding standard)
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_requirements">Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><strong>Ansilove</strong> requires <em>PHP</em> with the <em>GD</em> module installed. If you want to convert huge files, you may have to increase the <em>memory_limit size</em> in your <em>php.ini</em> file.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation">Installation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_using_tarballs">Using tarballs</h3>
+<div class="listingblock">
+<div class="content">
+<pre><tt>wget http://downloads.sourceforge.net/project/ansilove/ansilove-php/1.09/ansilove-php-1.09.tar.gz
+tar xvfz ansilove-php-1.09.tar.gz</tt></pre>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="_using_git">Using Git</h3>
+<div class="listingblock">
+<div class="content">
+<pre><tt>git clone git@github.com:fcambus/ansilove.git</tt></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/important.png" alt="Important" />
+</td>
+<td class="content">Under Windows people must install the PHP binaries : the easiest way is to use the <em>.exe</em> installer and enable the GD library.</td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration_options">Configuration options</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The configuration options are defined in the <em>ansilove.cfg.php</em> file.</p></div>
+<div class="sect2">
+<h3 id="_options_list">Options list</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+ANSILOVE_FILES_DIRECTORY
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Defines the directory where all the files to be rendered must be placed when using the library online to do "on the fly" conversions. Default value : <em>ansis/</em></p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+ANSILOVE_LOG_FILE
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Defines the log file used by the error message logger. Default value : <em>ansilove.log</em></p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+PCBOARD_STRIP_CODES
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Defines a serie of comma separated values containing PCBoard codes to be stripped from the output.</p></div>
+<div class="paragraph"><p>Default value : "@POFF@,@WAIT@", which means all <em>@POFF@</em> and <em>@WAIT@</em> codes will be stripped.</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+DIZ_EXTENSIONS
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Defines a serie of comma separated values specifying which files to render in DIZ mode. Default value : ".diz,.ion"</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+SUBSTITUTE_BREAK
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Whether or not stop rendering input files when the substitute (SUB) character is encountered. Default value : <em>1</em> (<strong>ENABLED</strong>)</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+WRAP_COLUMN_80
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Whether or not enable 80th column wrapping. Default value : <em>1</em> (<strong>ENABLED</strong>)</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+CED_BACKGROUND_COLOR
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Defines RGB values of the CED mode background color.</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+CED_FOREGROUND_COLOR
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Defines RGB values of the CED mode foreground color.</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+WORKBENCH_COLOR
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Defines RGB values of the WorkBench mode colors.</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+THUMBNAILS_SIZE
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Defines thumbnails size multiplicator. Default value : <em>1</em> (will produce 80 pixels width output)</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+THUMBNAILS_HEIGHT
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Defines maximum thumbnails height (in pixels). Default value : <em>0</em> (will produce full height output)</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+THUMBNAILS_TAG
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Defines the tag added to the output file name. Default value : <em>-thumbnail</em></p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+SPLIT
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Whether or not split output in multiple images files. Default value : <em>0</em> (<strong>DISABLED</strong>)</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+SPLIT_HEIGHT
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Define the height (in pixels) of each splitted pictures. Default value : <em>4096</em></p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+SPLIT_SEPARATOR
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Defines the separator used in output file names. Default value : <em>.</em></p></div>
+</div></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_supported_options_for_each_file_format">Supported options for each file format</h2>
+<div class="sectionbody">
+<div class="tableblock">
+<table rules="rows"
+width="100%"
+frame="border"
+cellspacing="0" cellpadding="4">
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<thead>
+<tr>
+<th align="center" valign="top">Format</th>
+<th align="center" valign="top">columns</th>
+<th align="center" valign="top">font</th>
+<th align="center" valign="top">bits</th>
+<th align="center" valign="top">icecolors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" valign="top"><p class="table">ANS</p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+<td align="center" valign="top"><p class="table">X</p></td>
+<td align="center" valign="top"><p class="table">X</p></td>
+<td align="center" valign="top"><p class="table">X</p></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p class="table">PCB</p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+<td align="center" valign="top"><p class="table">X</p></td>
+<td align="center" valign="top"><p class="table">X</p></td>
+<td align="center" valign="top"><p class="table">X</p></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p class="table">BIN</p></td>
+<td align="center" valign="top"><p class="table">X</p></td>
+<td align="center" valign="top"><p class="table">X</p></td>
+<td align="center" valign="top"><p class="table">X</p></td>
+<td align="center" valign="top"><p class="table">X</p></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p class="table">ADF</p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p class="table">IDF</p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p class="table">TND</p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+<td align="center" valign="top"><p class="table">X</p></td>
+<td align="center" valign="top"><p class="table">X</p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+</tr>
+<tr>
+<td align="center" valign="top"><p class="table">XB</p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+<td align="center" valign="top"><p class="table"></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_command_line_converter">Command line converter</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The command line converter can be invoked by typing :</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>./ansilove</tt></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Windows users should use the bundled <em>ansilove.bat</em> file.</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/caution.png" alt="Caution" />
+</td>
+<td class="content">Check the file header to ensure the path of your PHP interpreter is correct : Ansilove uses /usr/bin/php as default.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_usage">Usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre><tt>ansilove inputfile columns font bits icecolors</tt></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">If no options are specified, default settings are used : 80x25, 8-bit font and iCE colors turned off. If no columns are specified for .BIN, default value is 160.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_columns_options">Columns options</h3>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/important.png" alt="Important" />
+</td>
+<td class="content">Used for <em>.BIN</em> files only. Skip this option when converting other formats.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_font_options">Font options</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+80x25
+</p>
+</li>
+<li>
+<p>
+80x50
+</p>
+</li>
+<li>
+<p>
+PC or Amiga fonts (8-bit font only)
+</p>
+</li>
+</ul></div>
+<div class="sect3">
+<h4 id="_amiga_fonts_options">Amiga fonts options</h4>
+<div class="ulist"><ul>
+<li>
+<p>
+amiga (alias to Topaz)
+</p>
+</li>
+<li>
+<p>
+b-strict (Original B-Strict font)
+</p>
+</li>
+<li>
+<p>
+b-struct (Original B-Struct font)
+</p>
+</li>
+<li>
+<p>
+microknight (Original MicroKnight version)
+</p>
+</li>
+<li>
+<p>
+microknight+ (Modified MicroKnight version)
+</p>
+</li>
+<li>
+<p>
+microknightplus (alias to MicroKnight + to be used in URLs)
+</p>
+</li>
+<li>
+<p>
+mosoul (Original mO&#8217;sOul font)
+</p>
+</li>
+<li>
+<p>
+pot-noodle (Original P0T-NOoDLE font)
+</p>
+</li>
+<li>
+<p>
+topaz (Original Topaz Kickstart 2.x version)
+</p>
+</li>
+<li>
+<p>
+topaz+ (Modified Topaz Kickstart 2.x+ version)
+</p>
+</li>
+<li>
+<p>
+topazplus (alias to Topaz+ to be used in URLs)
+</p>
+</li>
+<li>
+<p>
+topaz500 (Original Topaz Kickstart 1.x version)
+</p>
+</li>
+<li>
+<p>
+topaz500+ (Modified Topaz Kickstart 1.x version)
+</p>
+</li>
+<li>
+<p>
+topaz500plus (alias to Topaz500+ to be used in URLs)
+</p>
+</li>
+</ul></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">All the amiga fonts come from the excellent <a href="http://spetsnaz.su/dmg/files/fonts/t!s-af10.zip">Amiga bitmap fonts</a> package by dMG.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_pc_fonts_options">PC fonts options</h4>
+<div class="ulist"><ul>
+<li>
+<p>
+80x25 (Default, code page 437)
+</p>
+</li>
+<li>
+<p>
+80x50 (Code page 437, 80x50 mode)
+</p>
+</li>
+<li>
+<p>
+armenian
+</p>
+</li>
+<li>
+<p>
+baltic (Code page 775)
+</p>
+</li>
+<li>
+<p>
+cyrillic (Code page 855)
+</p>
+</li>
+<li>
+<p>
+french-canadian (Code page 863)
+</p>
+</li>
+<li>
+<p>
+greek (Code page 737)
+</p>
+</li>
+<li>
+<p>
+greek-869 (Code page 869)
+</p>
+</li>
+<li>
+<p>
+hebrew (Code page 862)
+</p>
+</li>
+<li>
+<p>
+icelandic (Code page 861)
+</p>
+</li>
+<li>
+<p>
+latin1 (Code page 850)
+</p>
+</li>
+<li>
+<p>
+latin2 (Code page 852)
+</p>
+</li>
+<li>
+<p>
+nordic (Code page 865)
+</p>
+</li>
+<li>
+<p>
+persian (Iran System encoding standard)
+</p>
+</li>
+<li>
+<p>
+portuguese (Code page 860)
+</p>
+</li>
+<li>
+<p>
+russian (Code page 866)
+</p>
+</li>
+<li>
+<p>
+terminus (Terminus font)
+</p>
+</li>
+<li>
+<p>
+turkish (Code page 857)
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bits_options">Bits options</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+8 (8-bit)
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Default rendering mode.</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+9 (9-bit)
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Renders the 9th column of block characters, causing the output to look like it&#8217;s displayed in real textmode.</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+ced
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Renders files in black on gray, and limit the output to 78 columns (only available in ANSi loader).</p></div>
+<div class="paragraph"><p>Used together with an Amiga font, the output will look like it is displayed on Amiga.</p></div>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">It is possible to set custom RGB values by modifying the predefined constants <em>CED_BACKGROUND_COLOR</em> and <em>CED_FOREGROUND_COLOR</em> in the configuration file.</td>
+</tr></table>
+</div>
+<div class="ulist"><ul>
+<li>
+<p>
+thumbnail
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Generate thumbnail, using the full length picture by default.</p></div>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">You can adjust the maximum height and the output size by changing the <em>THUMBNAILS_HEIGHT</em> and <em>THUMBNAILS_SIZE</em> options in the configuration file.
+NOTE: It is also possible to change the tag added to the output file name by changing the <em>THUMBNAILS_TAG</em> option in the configuration file.</td>
+</tr></table>
+</div>
+<div class="ulist"><ul>
+<li>
+<p>
+transparent
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Renders files with transparent background (only available in ANSi loader).</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+workbench
+</p>
+</li>
+</ul></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p>Renders files using Amiga Workbench colors (only available in ANSi loader).</p></div>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">It is possible to set custom RGB values by modifying the predefined constants <em>WORKBENCH_COLOR</em> in the configuration file.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ice_colors_options">iCE colors options</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+0 (turned <strong>OFF</strong>)
+</p>
+</li>
+<li>
+<p>
+1 (turned <strong>ON</strong>)
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_examples">Examples</h3>
+<div class="listingblock">
+<div class="content">
+<pre><tt>ansilove ansi.ans
+ansilove ansi.ans 80x25 9 (80x25 font, 9-bit)
+ansilove ansi.ans 80x25 thumbnail (80x25 font, thumbnail rendering)
+ansilove ansi.ans 80x50 9 (80x50 font, 9-bit)
+ansilove ansi.ans russian 9 (Russian font, 9-bit)
+ansilove ansi.ans amiga (Amiga font)</tt></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>ansilove pcboard.pcb
+ansilove pcboard.pcb 80x25 9 (80x25 font, 9-bit)
+ansilove pcboard.pcb 80x25 thumbnail (80x25 font, thumbnail rendering)</tt></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>ansilove binary.bin 160
+ansilove binary.bin 160 80x25 9 (80x25 font, 9-bit)
+ansilove binary.bin 160 80x25 thumbnail (80x25 font, thumbnail rendering)
+ansilove binary.bin 160 80x50 9 (80x50 font, 9-bit)</tt></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>ansilove adf.adf
+ansilove adf.adf thumbnail (thumbnail rendering)</tt></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>ansilove idf.idf
+ansilove idf.idf thumbnail (thumbnail rendering)</tt></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>ansilove tundra.tnd
+ansilove tundra.tnd 80x25 9 (80x25 font, 9-bit)
+ansilove tundra.tnd 80x25 thumbnail (80x25 font, thumbnail rendering)</tt></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>ansilove xbin.xb
+ansilove xbin.xb thumbnail (thumbnail rendering)</tt></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/important.png" alt="Important" />
+</td>
+<td class="content">Files with a .DIZ extension are rendered with the exact needed number of columns. White spaces and empty lines at the beginning and end of DIZ files are stripped from the output.</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">You can customize file extensions definitions in the configuration fileby modifying the predefined constant called <em>DIZ_EXTENSIONS</em></td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_library_usage_for_doing_on_the_fly_conversions_on_web_pages">Library usage for doing on the fly conversions on web pages</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Using Ansilove library for doing "on the fly" conversions on Web pages, can be done using these loaders :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+load_ansi.php
+</p>
+</li>
+<li>
+<p>
+load_pcboard.php
+</p>
+</li>
+<li>
+<p>
+load_bin.php
+</p>
+</li>
+<li>
+<p>
+load_adf.php
+</p>
+</li>
+<li>
+<p>
+load_idf.php
+</p>
+</li>
+<li>
+<p>
+load_tundra.php
+</p>
+</li>
+<li>
+<p>
+load_xbin.php
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Upload the loaders you plan to use, the library <em>ansilove.php</em>, the config file <em>ansilove.cfg.php</em>, along with the <em>fonts</em> directory somewhere on your web site.</p></div>
+<div class="paragraph"><p>For security issues, all the files to be rendered must be placed in a directory, which is <em>ansis/</em> by default (the ending slash is required). This value is defined in the configuration file by the <em>ANSILOVE_FILES_DIRECTORY</em> constant.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/caution.png" alt="Caution" />
+</td>
+<td class="content">Do <strong>NOT</strong> unset the <em>ANSILOVE_FILES_DIRECTORY</em> constant, else it&#8217;ll be possible to convert files laying in the same directory than the loaders, which could lead to possible security leaks.</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/important.png" alt="Important" />
+</td>
+<td class="content">Please note that the input is sanitized, so it is impossible to use / and .. in paths.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_including_custom_image_tags_in_html_code">Including custom image tags in HTML code</h3>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_ansi.php?input=ansi.ans"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_ansi.php?input=ansi.ans&amp;font=80x25&amp;bits=9"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_ansi.php?input=ansi.ans&amp;font=80x25&amp;bits=thumbnail"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_ansi.php?input=ansi.ans&amp;font=russian"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_ansi.php?input=ansi.ans&amp;font=russian&amp;bits=9"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_ansi.php?input=ansi.ans&amp;font=amiga"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_ansi.php?input=ansi.ans&amp;font=80x50&amp;bits=9"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_ansi.php?input=ansi.ans&amp;font=80x25&amp;bits=9&amp;icecolors=1"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span></tt></pre></div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_pcboard.php?input=pcboard.pcb"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_pcboard.php?input=pcboard.pcb&amp;font=80x25&amp;bits=9"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_pcboard.php?input=pcboard.pcb&amp;font=80x25&amp;bits=thumbnail"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_pcboard.php?input=pcboard.pcb&amp;font=russian"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_pcboard.php?input=pcboard.pcb&amp;font=russian&amp;bits=9"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_pcboard.php?input=pcboard.pcb&amp;font=amiga"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_pcboard.php?input=pcboard.pcb&amp;font=80x50&amp;bits=9"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_pcboard.php?input=pcboard.pcb&amp;font=80x25&amp;bits=9&amp;icecolors=1"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span></tt></pre></div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_binary.php?input=binary.bin&amp;columns=160"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_binary.php?input=binary.bin&amp;columns=160&amp;font=80x25&amp;bits=9"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_binary.php?input=binary.bin&amp;columns=160&amp;font=80x25&amp;bits=thumbnail"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_binary.php?input=binary.bin&amp;columns=160&amp;font=80x50&amp;bits=9"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_binary.php?input=binary.bin&amp;columns=160&amp;font=80x25&amp;bits=9&amp;icecolors=1"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span></tt></pre></div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_adf.php?input=adf.adf"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_adf.php?input=adf.adf&amp;bits=thumbnail"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span></tt></pre></div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_idf.php?input=idf.idf"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_idf.php?input=idf.idf&amp;bits=thumbnail"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span></tt></pre></div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_tundra.php?input=tundra.tnd"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_tundra.php?input=tundra.tnd&amp;font=80x25&amp;bits=9"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_tundra.php?input=tundra.tnd&amp;font=80x25&amp;bits=thumbnail"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span></tt></pre></div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_xbin.php?input=xbin.xb"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;img</span></span> <span style="color: #009900">src</span><span style="color: #990000">=</span><span style="color: #FF0000">"load_xbin.php?input=xbin.xb&amp;bits=thumbnail"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span></tt></pre></div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/tip.png" alt="Tip" />
+</td>
+<td class="content">Check <em>examples/ansilove.html</em> to see the library in action.</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">If you want your HTML code to validate correctly, you should replace the <em>&amp;</em> characters by <em>&amp;amp;</em> and add an <em>alt</em> element to the <em>img</em> tags.</td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_library_usage">Library usage</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>It is also possible to use the library in your PHP applications or scripts :</p></div>
+<div class="sect2">
+<h3 id="_loading_em_ansilove_php_em_library_in_your_php_source">Loading <em>ansilove.php</em> library in your PHP source</h3>
+<div class="listingblock">
+<div class="content">
+<pre><tt>require_once('ansilove.php');</tt></pre>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="_calling_the_adequate_loaders_to_convert_input_files">Calling the adequate loaders to convert input files</h3>
+<div class="listingblock">
+<div class="content">
+<pre><tt>load_ansi($input,$output,$font,$bits,$icecolors);</tt></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>load_pcboard($input,$output,$font,$bits,$icecolors);</tt></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>load_binary($input,$output,$columns,$font,$bits,$icecolors);</tt></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>load_adf($input,$output);</tt></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>load_idf($input,$output);</tt></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>load_tundra($input,$output,$font,$bits);</tt></pre>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>load_xbin($input,$output);</tt></pre>
+</div></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_retrieve_sauce_informations">Retrieve SAUCE Informations</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Retrieving SAUCE informations from files can be done using the <em>load_sauce</em> function :</p></div>
+<div class="sect2">
+<h3 id="_loading_em_ansilove_php_em_library_in_your_php_source_2">Loading <em>ansilove.php</em> library in your PHP source</h3>
+<div class="listingblock">
+<div class="content">
+<pre><tt>require_once('ansilove.php');</tt></pre>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="_loading_sauce_informations">Loading sauce informations</h3>
+<div class="listingblock">
+<div class="content">
+<pre><tt>$sauce=load_sauce($input_file_name);</tt></pre>
+</div></div>
+<div class="paragraph"><p>The <em>load_sauce</em> function will return an array containing the SAUCE informations :</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>Array
+(
+    [ID] =&gt; SAUCE
+    [Version] =&gt; 00
+    [Title] =&gt; Title
+    [Author] =&gt; Author
+    [Group] =&gt; Group
+    [Date] =&gt; 19970621
+    [FileSize] =&gt; 1997
+    [DataType] =&gt; 1
+    [FileType] =&gt; 1
+    [TInfo1] =&gt; 80
+    [TInfo2] =&gt; 29
+    [TInfo3] =&gt; 0
+    [TInfo4] =&gt; 0
+    [Comments] =&gt; 10
+    [Flags] =&gt; 0
+    [Filler] =&gt;
+    [Comment_Line_01] =&gt; Comment Line
+    [...]
+    [Comment_Line_255] =&gt; Comment Line
+)</tt></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">You can find detailed informations about SAUCE (including full specifications) here : <a href="http://www.acid.org/info/sauce/sauce.htm">http://www.acid.org/info/sauce/sauce.htm</a></td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_license">License</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Ansilove is released under a MIT-style license. See <em>LICENSE</em> file for details.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>Copyright (c) 2003-2011, Frederic Cambus
+Ansilove™ is a trademark of Frederic Cambus.
+http://ansilove.sourceforge.net
+All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction except as noted below, including without
+limitation the rights to use, copy, modify, merge, publish, distribute, and/or
+sublicense, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+- The Software and/or source code cannot be copied in whole and sold without
+  meaningful modification for a profit.
+
+- The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+- Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+- Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</tt></pre>
+</div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_distribution">Distribution</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>If you want to add an Ansilove download link on your page, please use the following download link :</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>http://sourceforge.net/projects/ansilove/files/</tt></pre>
+</div></div>
+<div class="paragraph"><p>Ansilove is now also available on GitHub :</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>https://github.com/fcambus/ansilove</tt></pre>
+</div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_support_and_donations">Support and Donations</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Ansilove is the result of countless hours of coding and testing, in order to provide the most accurate possible <strong>ANSi</strong> and <strong>ASCii</strong> conversion tool. If you find this program useful, please consider making a donation, thank you &lt;3</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contact">Contact</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Project Homepage : <a href="http://ansilove.sourceforge.net">http://ansilove.sourceforge.net</a></p></div>
+<div class="paragraph"><p>Sister project : <a href="http://www.ascii-codes.com">http://www.ascii-codes.com</a></p></div>
+<div class="paragraph"><p>For bug report, feedback, or any other reasons, please write at the following address :</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>Frederic Cambus &lt;fcambus AT users DOT sourceforge DOT net&gt;</tt></pre>
+</div></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Version 1.09<br />
+Last updated 2011-12-05 00:58:50 CET
+</div>
+</div>
+</body>
+</html>
