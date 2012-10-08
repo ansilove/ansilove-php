@@ -7,6 +7,16 @@
           |______/    _ __ __________ \/ _______ \/ ________ __ _  yop \/
 
 
+Ansilove/PHP 1.10 (2011-10-08)
+
+- Added new and updated documentation file in AsciiDoc format (Also available
+  in HTML and PDF)
+- Using proper bitshift instead of pow for ADF / IDF / XBIN font proces
+- Skipping 'Set mode' and 'Reset mode' sequences to correctly render files
+  saved with recent versions of PabloDraw 
+
+
+
 Ansilove/PHP 1.09 (2011-11-22)
 
 - Added functions in the ANSi loader to split the output into several PNG files
