@@ -753,6 +753,16 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                break;
             }
 
+/*****************************************************************************/
+/* SKIPPING SET MODE AND RESET MODE SEQUENCES                                */
+/*****************************************************************************/
+
+            if ($ansi_sequence_character=='h' || $ansi_sequence_character=='l')
+            {
+               $loop+=$ansi_sequence_loop+2;
+               break;
+            }
+
             $ansi_sequence.=$ansi_sequence_character;
          }
       }
