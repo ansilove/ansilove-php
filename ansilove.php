@@ -1709,9 +1709,7 @@ function load_adf($input,$output,$bits)
 
          for ($loop_column=0;$loop_column<8;$loop_column++)
          {
-            $adf_character_column=128/pow(2,$loop_column);
-
-            if (($adf_character_line & $adf_character_column)!=$adf_character_column)
+            if (($adf_character_line & 0x80>>$loop_column)==0)
             {
                imagesetpixel($font_inverted,($loop*8)+$loop_column,$adf_font_size_y,$colors[0]);
             }
@@ -1925,9 +1923,7 @@ function load_idf($input,$output,$bits)
 
          for ($loop_column=0;$loop_column<8;$loop_column++)
          {
-            $idf_character_column=128/pow(2,$loop_column);
-
-            if (($idf_character_line & $idf_character_column)!=$idf_character_column)
+            if (($idf_character_line & 0x80>>$loop_column)==0)
             {
                imagesetpixel($font_inverted,($loop*8)+$loop_column,$idf_font_size_y,$colors[0]);
             }
@@ -2512,9 +2508,7 @@ function load_xbin($input,$output,$bits)
 
             for ($loop_column=0;$loop_column<8;$loop_column++)
             {
-               $xbin_character_column=128/pow(2,$loop_column);
-
-               if (($xbin_character_line & $xbin_character_column)!=$xbin_character_column)
+               if (($xbin_character_line & 0x80>>$loop_column)==0)
                {
                   imagesetpixel($font_inverted,($loop*8)+$loop_column,$xbin_font_size_y,$colors[0]);
                }
