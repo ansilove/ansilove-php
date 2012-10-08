@@ -1,8 +1,8 @@
 Ansilove
 ========
 :Author:    Frederic Cambus
-:Date:      2011-12-05
-:Revision:  1.09
+:Date:      2012-10-08
+:Revision:  1.10
 
 Description
 -----------
@@ -67,8 +67,8 @@ Using tarballs
 ~~~~~~~~~~~~~~
 
 ----
-wget http://downloads.sourceforge.net/project/ansilove/ansilove-php/1.09/ansilove-php-1.09.tar.gz
-tar xvfz ansilove-php-1.09.tar.gz
+wget http://downloads.sourceforge.net/project/ansilove/ansilove-php/1.10/ansilove-php-1.10.tar.gz
+tar xvfz ansilove-php-1.10.tar.gz
 ----
 
 Using Git
@@ -560,7 +560,7 @@ License
 Ansilove is released under a MIT-style license. See 'LICENSE' file for details.
 
 ----
-Copyright (c) 2003-2011, Frederic Cambus
+Copyright (c) 2003-2012, Frederic Cambus
 Ansilove™ is a trademark of Frederic Cambus.
 http://ansilove.sourceforge.net
 All rights reserved.

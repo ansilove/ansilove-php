@@ -11,7 +11,7 @@ Ansilove/PHP 1.10 (2011-10-08)
 
 - Added new and updated documentation file in AsciiDoc format (Also available
   in HTML and PDF)
-- Using proper bitshift instead of pow for ADF / IDF / XBIN font proces
+- Using proper bitshift instead of pow for ADF / IDF / XBIN font processing
 - Skipping 'Set mode' and 'Reset mode' sequences to correctly render files
   saved with recent versions of PabloDraw 
 
