@@ -14,7 +14,7 @@
 	            \/                   \_\  \ \_______\      \ \\/ \__\     \ \
 	                                    \__\/        \______\/ h7/dS!\_____\/
 
-# Description
+## Description
 
 Ansilove is a set of tools to convert ANSi and artscene-related file formats
 into PNG images, supporting ANSi (.ANS), PCBOARD (.PCB), BiNARY (.BIN), ADF
@@ -33,7 +33,7 @@ far and so on.
 Ansilove doesn’t require any Web server : you can use the bundled command
 line converter to convert files locally on your computer.
 
-# Features
+## Features
 
 - ANSi (.ANS) format support
 - PCBOARD (.PCB) format support
@@ -67,11 +67,18 @@ line converter to convert files locally on your computer.
 - Armenian
 - Persian (Iran System encoding standard)
 
-# License
+## License
 
 Ansilove is released under a MIT-style license. See `LICENSE` file for details.
 
-# Contact
+## Author
+
+Ansilove is developed by Frederic Cambus
+
+- Site : http://www.cambus.net
+- Twitter: http://twitter.com/fcambus
+
+## Resources
 
 Project Homepage : http://ansilove.sourceforge.net
 
