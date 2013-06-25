@@ -1,12 +1,15 @@
 #!/usr/bin/php
 <?PHP
 /*****************************************************************************/
+/*   ____   __ __   ___. __  __   _______._______                            */
+/* __\   \./  \| \. \  |_| \|  |_/    \  |  /  _/                            */
+/* \___\__|__|\___|_____/___|____/____/\___/\____/plur                       */
 /*                                                                           */
-/* Ansilove/PHP 1.10 (c) by Frederic Cambus 2003-2012                        */
+/* Ansilove/PHP 1.10 (c) by Frederic Cambus 2003-2013                        */
 /* http://ansilove.sourceforge.net                                           */
 /*                                                                           */
 /* Created:      2003/07/17                                                  */
-/* Last Updated: 2012/10/08                                                  */
+/* Last Updated: 2013/06/25                                                  */
 /*                                                                           */
 /* Ansilove is released under a MIT-style license.                           */
 /* See LICENSE file for details.                                             */
