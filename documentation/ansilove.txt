@@ -1,7 +1,7 @@
 Ansilove
 ========
 :Author:    Frederic Cambus
-:Date:      2012-10-08
+:Date:      2013-06-25
 :Revision:  1.10
 
 Description
@@ -249,7 +249,7 @@ Amiga fonts options
 - topaz500+ (Modified Topaz Kickstart 1.x version)
 - topaz500plus (alias to Topaz500+ to be used in URLs)
 
-NOTE: All the amiga fonts come from the excellent http://spetsnaz.su/dmg/files/fonts/t!s-af10.zip[Amiga bitmap fonts] package by dMG.
+NOTE: All the amiga fonts come from the excellent http://www.trueschool.se/files/fonts/t!s-af10.zip[Amiga bitmap fonts] package by dMG.
 
 PC fonts options
 ^^^^^^^^^^^^^^^^
@@ -560,7 +560,7 @@ License
 Ansilove is released under a MIT-style license. See 'LICENSE' file for details.
 
 ----
-Copyright (c) 2003-2012, Frederic Cambus
+Copyright (c) 2003-2013, Frederic Cambus
 Ansilove™ is a trademark of Frederic Cambus.
 http://ansilove.sourceforge.net
 All rights reserved.
