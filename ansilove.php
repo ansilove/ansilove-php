@@ -698,7 +698,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                      if (!$workbench)
                      {
                         $color_foreground+=8;
-					 }
+                     }
                      $bold=TRUE;
                   }
 
@@ -717,7 +717,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                      if (!$workbench)
                      {
                         $color_background+=8;
-					 }
+                     }
                      $blink=TRUE;
                   }
 
@@ -946,7 +946,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
             imagecopy($ansi,$font,$position_x*$bits-1+1,$position_y*$font_size_y+14,$character*$font_size_x,$color_foreground*$font_size_y+14,$bits,2);
          }
 
-         if ($bold && !$italics)
+         if ($bold && !$italics && ($ced || $workbench))
          {
             imagecopy($ansi,$font,1+$position_x*$bits,$position_y*$font_size_y,$character*$font_size_x,$color_foreground*$font_size_y,$bits,$font_size_y);
          }
