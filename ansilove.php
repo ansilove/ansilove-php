@@ -23,7 +23,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 function write_log($message)
 {
-    if (($file = @fopen (ANSILOVE_LOG_FILE, a))==FALSE)
+    if (($file = @fopen(ANSILOVE_LOG_FILE, a))==FALSE)
     {
         echo "ERROR: Can't create log file.";
         exit(-1);
@@ -395,7 +395,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
 /* LOAD INPUT FILE                                                           */
 /*****************************************************************************/
 
-   if (!$input_file = fopen($input,'r'))
+   if (!$input_file = @fopen($input,'r'))
    {
       error("Can't open file $input");
    }
@@ -1144,7 +1144,7 @@ function load_pcboard($input,$output,$font,$bits)
 /* LOAD INPUT FILE                                                           */
 /*****************************************************************************/
 
-   if (!$input_file = fopen($input,'r'))
+   if (!$input_file = @fopen($input,'r'))
    {
       error("Can't open file $input");
    }
@@ -1483,7 +1483,7 @@ function load_binary($input,$output,$columns,$font,$bits,$icecolors)
 /* LOAD INPUT FILE                                                           */
 /*****************************************************************************/
 
-   if (!$input_file = fopen($input,'r'))
+   if (!$input_file = @fopen($input,'r'))
    {
       error("Can't open file $input");
    }
@@ -1625,7 +1625,7 @@ function load_adf($input,$output,$bits)
 /* LOAD INPUT FILE                                                           */
 /*****************************************************************************/
 
-   if (!$input_file = fopen($input,'r'))
+   if (!$input_file = @fopen($input,'r'))
    {
       error("Can't open file $input");
    }
@@ -1832,7 +1832,7 @@ function load_idf($input,$output,$bits)
 /* LOAD INPUT FILE                                                           */
 /*****************************************************************************/
 
-   if (!$input_file = fopen($input,'r'))
+   if (!$input_file = @fopen($input,'r'))
    {
       error("Can't open file $input");
    }
@@ -2112,7 +2112,7 @@ function load_tundra($input,$output,$font,$bits)
 /* LOAD INPUT FILE                                                           */
 /*****************************************************************************/
 
-   if (!$input_file = fopen($input,'r'))
+   if (!$input_file = @fopen($input,'r'))
    {
       error("Can't open file $input");
    }
@@ -2376,7 +2376,7 @@ function load_xbin($input,$output,$bits)
 /* LOAD INPUT FILE                                                           */
 /*****************************************************************************/
 
-   if (!$input_file = fopen($input,'r'))
+   if (!$input_file = @fopen($input,'r'))
    {
       error("Can't open file $input");
    }
@@ -2711,7 +2711,7 @@ function load_sauce($input)
 /* LOAD INPUT FILE                                                           */
 /*****************************************************************************/
 
-   if (!$input_file = fopen ($input,'r'))
+   if (!$input_file = @fopen($input,'r'))
    {
       error("Can't open file $input");
    }
