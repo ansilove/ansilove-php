@@ -8,7 +8,7 @@
 /* http://ansilove.sourceforge.net                                           */
 /*                                                                           */
 /* Created:      2003/07/17                                                  */
-/* Last Updated: 2013/06/25                                                  */
+/* Last Updated: 2013/10/03                                                  */
 /*                                                                           */
 /* Ansilove is released under a MIT-style license.                           */
 /* See LICENSE file for details.                                             */
@@ -29,7 +29,7 @@ function write_log($message)
         exit(-1);
     }
 
-    $string = date("[Y-m-d] - H:i:s")." - $message\n";
+    $string = @date("[Y-m-d] - H:i:s")." - $message\n";
 
     fputs ($file,$string);
     fclose ($file);
