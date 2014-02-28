@@ -8,7 +8,7 @@
 /* http://ansilove.sourceforge.net                                           */
 /*                                                                           */
 /* Created:      2003/07/17                                                  */
-/* Last Updated: 2013/10/03                                                  */
+/* Last Updated: 2014/02/28                                                  */
 /*                                                                           */
 /* Ansilove is released under a MIT-style license.                           */
 /* See LICENSE file for details.                                             */
@@ -2196,16 +2196,22 @@ function load_tundra($input,$output,$font,$bits)
 
       if ($character==2)
       {
+         $character=ord($input_file_buffer[$loop+1]);
+
          $loop+=5;
       }
 
       if ($character==4)
       {
+         $character=ord($input_file_buffer[$loop+1]);
+
          $loop+=5;
       }
 
       if ($character==6)
       {
+         $character=ord($input_file_buffer[$loop+1]);
+
          $loop+=9;
       }
 
