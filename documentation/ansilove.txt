@@ -613,8 +613,18 @@ Support and Donations
 
 Ansilove is the result of countless hours of coding and testing, in order to provide the most accurate possible *ANSi* and *ASCii* conversion tool. If you find this program useful, please consider making a donation, thank you <3
 
+Author
+------
+
+Ansilove is developed by Frederic Cambus
+
+Site : http://www.cambus.net
+
+Twitter : http://twitter.com/fcambus
+
 Contact
 -------
+
 Project Homepage : http://ansilove.sourceforge.net
 
 Sister project : http://www.ascii-codes.com
