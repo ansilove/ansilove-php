@@ -7,6 +7,19 @@
           |______/    _ __ __________ \/ _______ \/ ________ __ _  yop \/
 
 
+Ansilove/PHP 1.11 (2013-03-26)
+
+- Fixed a bug in the TUNDRA renderer 
+- Fixed inconsistency when using Amiga fonts : bold characters are now
+  displayed only in CED and WorkBench modes
+- Removing PHP warning about date.timezone settings when logging errors
+- Removing PHP warning displayed when input file doesn't exist 
+- Added 3 example ASCiis (Thanks to : Plur, Spear, Knocturnal, Sk!n)
+- Added 9 example ANSis (Thanks to : Knocturnal, Grymmjack, Noches,
+  Avenging Angel, Enzo, BYM, Filth, Rad Man) 
+
+
+
 Ansilove/PHP 1.10 (2012-10-08)
 
 - Added new and updated documentation file in AsciiDoc format (Also available
