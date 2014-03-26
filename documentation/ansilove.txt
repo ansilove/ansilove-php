@@ -560,7 +560,7 @@ License
 Ansilove is released under a MIT-style license. See 'LICENSE' file for details.
 
 ----
-Copyright (c) 2003-2013, Frederic Cambus
+Copyright (c) 2003-2014, Frederic Cambus
 Ansilove™ is a trademark of Frederic Cambus.
 http://ansilove.sourceforge.net
 All rights reserved.

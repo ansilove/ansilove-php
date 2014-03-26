@@ -5,11 +5,11 @@ rem /*   ____   __ __   ___. __  __   _______._______                        */
 rem /* __\   \./  \| \. \  |_| \|  |_/    \  |  /  _/                        */
 rem /* \___\__|__|\___|_____/___|____/____/\___/\____/plur                   */
 rem /*                                                                       */
-rem /* Ansilove/PHP 1.10 (c) by Frederic Cambus 2003-2013                    */
+rem /* Ansilove/PHP 1.10 (c) by Frederic Cambus 2003-2014                    */
 rem /* http://ansilove.sourceforge.net                                       */
 rem /*                                                                       */
 rem /* Created:      2009/03/19                                              */
-rem /* Last Updated: 2013/06/25                                              */
+rem /* Last Updated: 2014/03/26                                              */
 rem /*                                                                       */
 rem /*************************************************************************/
 
