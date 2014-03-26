@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="generator" content="AsciiDoc 8.6.7" />
+<meta name="generator" content="AsciiDoc 8.6.9" />
 <title>Ansilove</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
@@ -87,9 +87,15 @@ ul, ol, li > p {
 ul > li     { color: #aaa; }
 ul > li > * { color: black; }
 
-pre {
+.monospaced, code, pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
   padding: 0;
   margin: 0;
+}
+pre {
+  white-space: pre-wrap;
 }
 
 #author {
@@ -219,7 +225,7 @@ div.exampleblock > div.content {
 }
 
 div.imageblock div.content { padding-left: 0; }
-span.image img { border-style: none; }
+span.image img { border-style: none; vertical-align: text-bottom; }
 a.image:visited { color: white; }
 
 dl {
@@ -415,12 +421,6 @@ div.unbreakable { page-break-inside: avoid; }
  *
  * */
 
-tt {
-  font-family: "Courier New", Courier, monospace;
-  font-size: inherit;
-  color: navy;
-}
-
 div.tableblock {
   margin-top: 1.0em;
   margin-bottom: 1.5em;
@@ -453,12 +453,6 @@ div.tableblock > table[frame="vsides"] {
  * html5 specific
  *
  * */
-
-.monospaced {
-  font-family: "Courier New", Courier, monospace;
-  font-size: inherit;
-  color: navy;
-}
 
 table.tableblock {
   margin-top: 1.0em;
@@ -539,6 +533,8 @@ body.manpage div.sectionbody {
 @media print {
   body.manpage div#toc { display: none; }
 }
+
+
 </style>
 <script type="text/javascript">
 /*<![CDATA[*/
@@ -739,8 +735,8 @@ asciidoc.install(2);
 <div id="header">
 <h1>Ansilove</h1>
 <span id="author">Frederic Cambus</span><br />
-<span id="revnumber">version 1.10,</span>
-<span id="revdate">2013-06-25</span>
+<span id="revnumber">version 1.11,</span>
+<span id="revdate">2014-03-26</span>
 <div id="toc">
   <div id="toctitle">Table of Contents</div>
   <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
@@ -931,15 +927,15 @@ Persian (Iran System encoding standard)
 <h3 id="_using_tarballs">Using tarballs</h3>
 <div class="listingblock">
 <div class="content">
-<pre><tt>wget http://downloads.sourceforge.net/project/ansilove/ansilove-php/1.10/ansilove-php-1.10.tar.gz
-tar xvfz ansilove-php-1.10.tar.gz</tt></pre>
+<pre><code>wget http://downloads.sourceforge.net/project/ansilove/ansilove-php/1.11/ansilove-php-1.11.tar.gz
+tar xvfz ansilove-php-1.11.tar.gz</code></pre>
 </div></div>
 </div>
 <div class="sect2">
 <h3 id="_using_git">Using Git</h3>
 <div class="listingblock">
 <div class="content">
-<pre><tt>git clone git@github.com:fcambus/ansilove.git</tt></pre>
+<pre><code>git clone git@github.com:fcambus/ansilove.git</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -1210,7 +1206,7 @@ cellspacing="0" cellpadding="4">
 <div class="paragraph"><p>The command line converter can be invoked by typing :</p></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>./ansilove</tt></pre>
+<pre><code>./ansilove</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -1232,7 +1228,7 @@ cellspacing="0" cellpadding="4">
 <h3 id="_usage">Usage</h3>
 <div class="listingblock">
 <div class="content">
-<pre><tt>ansilove inputfile columns font bits icecolors</tt></pre>
+<pre><code>ansilove inputfile columns font bits icecolors</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -1566,46 +1562,46 @@ workbench
 <h3 id="_examples">Examples</h3>
 <div class="listingblock">
 <div class="content">
-<pre><tt>ansilove ansi.ans
+<pre><code>ansilove ansi.ans
 ansilove ansi.ans 80x25 9 (80x25 font, 9-bit)
 ansilove ansi.ans 80x25 thumbnail (80x25 font, thumbnail rendering)
 ansilove ansi.ans 80x50 9 (80x50 font, 9-bit)
 ansilove ansi.ans russian 9 (Russian font, 9-bit)
-ansilove ansi.ans amiga (Amiga font)</tt></pre>
+ansilove ansi.ans amiga (Amiga font)</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>ansilove pcboard.pcb
+<pre><code>ansilove pcboard.pcb
 ansilove pcboard.pcb 80x25 9 (80x25 font, 9-bit)
-ansilove pcboard.pcb 80x25 thumbnail (80x25 font, thumbnail rendering)</tt></pre>
+ansilove pcboard.pcb 80x25 thumbnail (80x25 font, thumbnail rendering)</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>ansilove binary.bin 160
+<pre><code>ansilove binary.bin 160
 ansilove binary.bin 160 80x25 9 (80x25 font, 9-bit)
 ansilove binary.bin 160 80x25 thumbnail (80x25 font, thumbnail rendering)
-ansilove binary.bin 160 80x50 9 (80x50 font, 9-bit)</tt></pre>
+ansilove binary.bin 160 80x50 9 (80x50 font, 9-bit)</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>ansilove adf.adf
-ansilove adf.adf thumbnail (thumbnail rendering)</tt></pre>
+<pre><code>ansilove adf.adf
+ansilove adf.adf thumbnail (thumbnail rendering)</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>ansilove idf.idf
-ansilove idf.idf thumbnail (thumbnail rendering)</tt></pre>
+<pre><code>ansilove idf.idf
+ansilove idf.idf thumbnail (thumbnail rendering)</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>ansilove tundra.tnd
+<pre><code>ansilove tundra.tnd
 ansilove tundra.tnd 80x25 9 (80x25 font, 9-bit)
-ansilove tundra.tnd 80x25 thumbnail (80x25 font, thumbnail rendering)</tt></pre>
+ansilove tundra.tnd 80x25 thumbnail (80x25 font, thumbnail rendering)</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>ansilove xbin.xb
-ansilove xbin.xb thumbnail (thumbnail rendering)</tt></pre>
+<pre><code>ansilove xbin.xb
+ansilove xbin.xb thumbnail (thumbnail rendering)</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -1779,38 +1775,38 @@ http://www.gnu.org/software/src-highlite -->
 <h3 id="_loading_em_ansilove_php_em_library_in_your_php_source">Loading <em>ansilove.php</em> library in your PHP source</h3>
 <div class="listingblock">
 <div class="content">
-<pre><tt>require_once('ansilove.php');</tt></pre>
+<pre><code>require_once('ansilove.php');</code></pre>
 </div></div>
 </div>
 <div class="sect2">
 <h3 id="_calling_the_adequate_loaders_to_convert_input_files">Calling the adequate loaders to convert input files</h3>
 <div class="listingblock">
 <div class="content">
-<pre><tt>load_ansi($input,$output,$font,$bits,$icecolors);</tt></pre>
+<pre><code>load_ansi($input,$output,$font,$bits,$icecolors);</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>load_pcboard($input,$output,$font,$bits,$icecolors);</tt></pre>
+<pre><code>load_pcboard($input,$output,$font,$bits,$icecolors);</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>load_binary($input,$output,$columns,$font,$bits,$icecolors);</tt></pre>
+<pre><code>load_binary($input,$output,$columns,$font,$bits,$icecolors);</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>load_adf($input,$output);</tt></pre>
+<pre><code>load_adf($input,$output);</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>load_idf($input,$output);</tt></pre>
+<pre><code>load_idf($input,$output);</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>load_tundra($input,$output,$font,$bits);</tt></pre>
+<pre><code>load_tundra($input,$output,$font,$bits);</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>load_xbin($input,$output);</tt></pre>
+<pre><code>load_xbin($input,$output);</code></pre>
 </div></div>
 </div>
 </div>
@@ -1823,19 +1819,19 @@ http://www.gnu.org/software/src-highlite -->
 <h3 id="_loading_em_ansilove_php_em_library_in_your_php_source_2">Loading <em>ansilove.php</em> library in your PHP source</h3>
 <div class="listingblock">
 <div class="content">
-<pre><tt>require_once('ansilove.php');</tt></pre>
+<pre><code>require_once('ansilove.php');</code></pre>
 </div></div>
 </div>
 <div class="sect2">
 <h3 id="_loading_sauce_informations">Loading sauce informations</h3>
 <div class="listingblock">
 <div class="content">
-<pre><tt>$sauce=load_sauce($input_file_name);</tt></pre>
+<pre><code>$sauce=load_sauce($input_file_name);</code></pre>
 </div></div>
 <div class="paragraph"><p>The <em>load_sauce</em> function will return an array containing the SAUCE informations :</p></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>Array
+<pre><code>Array
 (
     [ID] =&gt; SAUCE
     [Version] =&gt; 00
@@ -1856,7 +1852,7 @@ http://www.gnu.org/software/src-highlite -->
     [Comment_Line_01] =&gt; Comment Line
     [...]
     [Comment_Line_255] =&gt; Comment Line
-)</tt></pre>
+)</code></pre>
 </div></div>
 <div class="admonitionblock">
 <table><tr>
@@ -1875,7 +1871,7 @@ http://www.gnu.org/software/src-highlite -->
 <div class="paragraph"><p>Ansilove is released under a MIT-style license. See <em>LICENSE</em> file for details.</p></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>Copyright (c) 2003-2013, Frederic Cambus
+<pre><code>Copyright (c) 2003-2014, Frederic Cambus
 Ansilove™ is a trademark of Frederic Cambus.
 http://ansilove.sourceforge.net
 All rights reserved.
@@ -1905,7 +1901,7 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
 FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</tt></pre>
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</code></pre>
 </div></div>
 </div>
 </div>
@@ -1915,12 +1911,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</tt><
 <div class="paragraph"><p>If you want to add an Ansilove download link on your page, please use the following download link :</p></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>http://sourceforge.net/projects/ansilove/files/</tt></pre>
+<pre><code>http://sourceforge.net/projects/ansilove/files/</code></pre>
 </div></div>
 <div class="paragraph"><p>Ansilove is now also available on GitHub :</p></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>https://github.com/fcambus/ansilove</tt></pre>
+<pre><code>https://github.com/fcambus/ansilove</code></pre>
 </div></div>
 </div>
 </div>
@@ -1938,7 +1934,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</tt><
 <div class="paragraph"><p>For bug report, feedback, or any other reasons, please write at the following address :</p></div>
 <div class="listingblock">
 <div class="content">
-<pre><tt>Frederic Cambus &lt;fcambus AT users DOT sourceforge DOT net&gt;</tt></pre>
+<pre><code>Frederic Cambus &lt;fcambus AT users DOT sourceforge DOT net&gt;</code></pre>
 </div></div>
 </div>
 </div>
@@ -1946,8 +1942,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</tt><
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Version 1.10<br />
-Last updated 2013-06-25 16:29:40 CEST
+Version 1.11<br />
+Last updated 2014-03-26 16:38:42 CET
 </div>
 </div>
 </body>

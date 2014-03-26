@@ -1,8 +1,8 @@
 Ansilove
 ========
 :Author:    Frederic Cambus
-:Date:      2013-06-25
-:Revision:  1.10
+:Date:      2014-03-26
+:Revision:  1.11
 
 Description
 -----------
@@ -67,8 +67,8 @@ Using tarballs
 ~~~~~~~~~~~~~~
 
 ----
-wget http://downloads.sourceforge.net/project/ansilove/ansilove-php/1.10/ansilove-php-1.10.tar.gz
-tar xvfz ansilove-php-1.10.tar.gz
+wget http://downloads.sourceforge.net/project/ansilove/ansilove-php/1.11/ansilove-php-1.11.tar.gz
+tar xvfz ansilove-php-1.11.tar.gz
 ----
 
 Using Git
