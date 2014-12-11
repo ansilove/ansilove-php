@@ -8,9 +8,9 @@
 /* http://ansilove.sourceforge.net                                           */
 /*                                                                           */
 /* Created:      2003/07/17                                                  */
-/* Last Updated: 2014/03/26                                                  */
+/* Last Updated: 2014/12/11                                                  */
 /*                                                                           */
-/* Ansilove is released under a MIT-style license.                           */
+/* Ansilove is released under the BSD 3-Clause license.                      */
 /* See LICENSE file for details.                                             */
 /*                                                                           */
 /*****************************************************************************/

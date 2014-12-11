@@ -69,7 +69,7 @@ line converter to convert files locally on your computer.
 
 ## License
 
-Ansilove is released under a MIT-style license. See `LICENSE` file for details.
+Ansilove is released under the BSD 3-Clause license. See `LICENSE` file for details.
 
 ## Author
 
