@@ -4,7 +4,7 @@
 /* __\   \./  \| \. \  |_| \|  |_/    \  |  /  _/                            */
 /* \___\__|__|\___|_____/___|____/____/\___/\____/plur                       */
 /*                                                                           */
-/* Ansilove/PHP 1.11 (c) by Frederic Cambus 2003-2014                        */
+/* Ansilove/PHP 1.11 (c) by Frederic Cambus 2003-2015                        */
 /* http://ansilove.sourceforge.net                                           */
 /*                                                                           */
 /* Created:      2003/07/17                                                  */
