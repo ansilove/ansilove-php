@@ -4,11 +4,15 @@
 /* __\   \./  \| \. \  |_| \|  |_/    \  |  /  _/                            */
 /* \___\__|__|\___|_____/___|____/____/\___/\____/plur                       */
 /*                                                                           */
-/* Ansilove/PHP 1.11 (c) by Frederic Cambus 2003-2015                        */
+/* Ansilove/PHP 1.11                                                         */
+/* Copyright (c) 2003-2016, Frederic Cambus                                  */
 /* http://ansilove.sourceforge.net                                           */
 /*                                                                           */
-/* Created:      2003/07/17                                                  */
-/* Last Updated: 2014/03/26                                                  */
+/* Created:      2003-07-17                                                  */
+/* Last Updated: 2016-01-05                                                  */
+/*                                                                           */
+/* Ansilove is released under the BSD 3-Clause license.                      */
+/* See LICENSE file for details.                                             */
 /*                                                                           */
 /*****************************************************************************/
 
