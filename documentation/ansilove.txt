@@ -1,7 +1,7 @@
 Ansilove
 ========
 :Author:    Frederic Cambus
-:Date:      2015-01-18
+:Date:      2016-01-05
 :Revision:  1.11
 
 Description
@@ -75,7 +75,7 @@ Using Git
 ~~~~~~~~~
 
 ----
-git clone git@github.com:fcambus/ansilove.git
+git clone git@github.com:ansilove/ansilove-php.git
 ----
 
 IMPORTANT: Under Windows people must install the PHP binaries : the easiest way is to use the '.exe' installer and enable the GD library. 
@@ -560,7 +560,7 @@ License
 Ansilove is released under the BSD 3-Clause license. See 'LICENSE' file for details.
 
 ----
-Copyright (c) 2003-2015, Frederic Cambus
+Copyright (c) 2003-2016, Frederic Cambus
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -602,7 +602,7 @@ http://sourceforge.net/projects/ansilove/files/
 Ansilove is now also available on GitHub :
 
 ----
-https://github.com/ansilove/ansilove
+https://github.com/ansilove/ansilove-php
 ----
 
 Support and Donations
