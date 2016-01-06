@@ -628,5 +628,5 @@ Sister project : http://www.ascii-codes.com
 
 For bug report, feedback, or any other reasons, please write at the following address :
 ----
-Frederic Cambus <fcambus AT users DOT sourceforge DOT net>
+Frederic Cambus <fred AT statdns DOT com>
 ----
