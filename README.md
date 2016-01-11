@@ -80,6 +80,6 @@ Ansilove is developed by Frederic Cambus
 
 ## Resources
 
-Project Homepage : http://ansilove.sourceforge.net
+Project Homepage : http://www.ansilove.org
 
 Sister project : http://www.ascii-codes.com

@@ -1,7 +1,7 @@
 Ansilove
 ========
 :Author:    Frederic Cambus
-:Date:      2016-01-05
+:Date:      2016-01-11
 :Revision:  1.11
 
 Description
@@ -67,7 +67,7 @@ Using tarballs
 ~~~~~~~~~~~~~~
 
 ----
-wget http://downloads.sourceforge.net/project/ansilove/ansilove-php/1.11/ansilove-php-1.11.tar.gz
+wget  http://www.ansilove.org/files/ansilove-php-1.11.tar.gz
 tar xvfz ansilove-php-1.11.tar.gz
 ----
 
@@ -596,7 +596,7 @@ Distribution
 If you want to add an Ansilove download link on your page, please use the following download link :
 
 ----
-http://sourceforge.net/projects/ansilove/files/
+http://www.ansilove.org/downloads.html
 ----
 
 Ansilove is now also available on GitHub :
@@ -622,7 +622,7 @@ Twitter : http://twitter.com/fcambus
 Contact
 -------
 
-Project Homepage : http://ansilove.sourceforge.net
+Project Homepage : http://www.ansilove.org
 
 Sister project : http://www.ascii-codes.com
 
