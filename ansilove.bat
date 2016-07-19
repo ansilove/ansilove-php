@@ -10,9 +10,9 @@ rem /* Copyright (c) 2003-2016, Frederic Cambus                              */
 rem /* http://www.ansilove.org                                               */
 rem /*                                                                       */
 rem /* Created:      2003-07-17                                              */
-rem /* Last Updated: 2016-01-11                                              */
+rem /* Last Updated: 2016-07-19                                              */
 rem /*                                                                       */
-rem /* Ansilove is released under the BSD 3-Clause license.                  */
+rem /* Ansilove is released under the BSD 2-Clause license.                  */
 rem /* See LICENSE file for details.                                         */
 rem /*                                                                       */
 rem /*************************************************************************/

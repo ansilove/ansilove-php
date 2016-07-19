@@ -9,9 +9,9 @@
 /* http://www.ansilove.org                                                   */
 /*                                                                           */
 /* Created:      2003-07-17                                                  */
-/* Last Updated: 2016-01-11                                                  */
+/* Last Updated: 2016-07-19                                                  */
 /*                                                                           */
-/* Ansilove is released under the BSD 3-Clause license.                      */
+/* Ansilove is released under the BSD 2-Clause license.                      */
 /* See LICENSE file for details.                                             */
 /*                                                                           */
 /*****************************************************************************/
