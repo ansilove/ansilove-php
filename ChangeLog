@@ -10,13 +10,13 @@
 Ansilove/PHP 1.11 (2013-03-26)
 
 - Fixed a bug in the TUNDRA renderer 
-- Fixed inconsistency when using Amiga fonts : bold characters are now
+- Fixed inconsistency when using Amiga fonts: bold characters are now
   displayed only in CED and WorkBench modes
 - Removing PHP warning about date.timezone settings when logging errors
-- Removing PHP warning displayed when input file doesn't exist 
-- Added 3 example ASCiis (Thanks to : Plur, Spear, Knocturnal, Sk!n)
-- Added 9 example ANSis (Thanks to : Knocturnal, Grymmjack, Noches,
-  Avenging Angel, Enzo, BYM, Filth, Rad Man) 
+- Removing PHP warning displayed when input file doesn't exist
+- Added 3 example ASCiis (Thanks to: Plur, Spear, Knocturnal, Sk!n)
+- Added 9 example ANSis (Thanks to: Knocturnal, Grymmjack, Noches,
+  Avenging Angel, Enzo, BYM, Filth, Rad Man)
 
 
 
@@ -48,12 +48,12 @@ Ansilove/PHP 1.08 (2011-07-12)
   characters)
 - Reordered font palettes to follow the ANSi color order rather than the EGA one
 - Added an error message logger (ANSILOVE_LOG_FILE option in the config file,
-  default : ansilove.log)
+  default: ansilove.log)
 - Added an option to continue rendering input files when the substitude (SUB)
   character is encountered (SUBSTITUTE_BREAK option in the config file,
-  default : 1 => Stop when encountering SUB character)
+  default: 1 => Stop when encountering SUB character)
 - Added an option to allow enabling/disabling 80th column wrapping
-  (WRAP_COLUMN_80 option in the config file, default : 1 => Wrap)
+  (WRAP_COLUMN_80 option in the config file, default: 1 => Wrap)
 - Changed default background color value for CED mode (170,170,170) instead
   of (168,168,168)
 - Added a transparent rendering mode to produce output files with transparent
@@ -62,7 +62,7 @@ Ansilove/PHP 1.08 (2011-07-12)
   (only available in ANSi loader)
 - Added scalable thumbnails support (THUMBNAILS_SIZE option in the config file)
 - Added an example file for thumbnails rendering (examples/thumbnails.html)
-- Added 3 example ASCiis (Thanks to : Cubon, Spidy and Spot)
+- Added 3 example ASCiis (Thanks to: Cubon, Spidy and Spot)
 
 
 
@@ -80,7 +80,7 @@ Ansilove/PHP 1.06 (2009-05-21)
 
 - Dumped all the fonts again to make the font collection more homogeneous and
   avoid minor character differences between fonts as much as possible
-- Added 6 new PC Fonts (Charsets : Armenian, French Canadian, Greek (CP869),
+- Added 6 new PC Fonts (Charsets: Armenian, French Canadian, Greek (CP869),
   Icelandic, Persian, Portuguese)
 - Fixed minor color palette problems causing the full intensity value to be
   252 instead of 255

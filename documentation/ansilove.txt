@@ -11,9 +11,9 @@ Description
 
 It includes an all purposes *command line converter*, along with a *library* to use on web pages for doing *"on the fly"* conversions. It creates size optimized *4-bit PNG* files and supports *SAUCE* (Standard Architecture for Universal Comment Extentions), 80x25 and 80x50 PC fonts (including all the 14 *MS-DOS charsets* and some unofficial ones), Amiga fonts, and iCE colors.
 
-It is written in *PHP*, and can thus be run on any supported system : the command line converter can be used under *Linux*, *Mac OS X*, *Windows*, and so far and so on.
+It is written in *PHP*, and can thus be run on any supported system: the command line converter can be used under *Linux*, *Mac OS X*, *Windows*, and so far and so on.
 
-IMPORTANT: Ansilove doesn't require any Web server : you can use the bundled command line converter to convert files locally on your computer.
+IMPORTANT: Ansilove doesn't require any Web server: you can use the bundled command line converter to convert files locally on your computer.
 
 Features
 ~~~~~~~~
@@ -78,12 +78,12 @@ Using Git
 git clone git@github.com:ansilove/ansilove-php.git
 ----
 
-IMPORTANT: Under Windows people must install the PHP binaries : the easiest way is to use the '.exe' installer and enable the GD library. 
+IMPORTANT: Under Windows people must install the PHP binaries: the easiest way is to use the '.exe' installer and enable the GD library. 
 
 Configuration options
 ----------------------
 
-The configuration options are defined in the 'ansilove.cfg.php' file. 
+The configuration options are defined in the 'ansilove.cfg.php' file.
 
 Options list
 ~~~~~~~~~~~~
@@ -91,13 +91,13 @@ Options list
 * ANSILOVE_FILES_DIRECTORY
 
 ****
-Defines the directory where all the files to be rendered must be placed when using the library online to do "on the fly" conversions. Default value : 'ansis/'
+Defines the directory where all the files to be rendered must be placed when using the library online to do "on the fly" conversions. Default value: 'ansis/'
 ****
 
 * ANSILOVE_LOG_FILE
 
 ****
-Defines the log file used by the error message logger. Default value : 'ansilove.log'
+Defines the log file used by the error message logger. Default value: 'ansilove.log'
 ****
 
 * PCBOARD_STRIP_CODES
@@ -105,25 +105,25 @@ Defines the log file used by the error message logger. Default value : 'ansilove
 ****
 Defines a serie of comma separated values containing PCBoard codes to be stripped from the output.
 
-Default value : "@POFF@,@WAIT@", which means all '@POFF@' and '@WAIT@' codes will be stripped.
+Default value: "@POFF@,@WAIT@", which means all '@POFF@' and '@WAIT@' codes will be stripped.
 ****
 
 * DIZ_EXTENSIONS
 
 ****
-Defines a serie of comma separated values specifying which files to render in DIZ mode. Default value : ".diz,.ion"
+Defines a serie of comma separated values specifying which files to render in DIZ mode. Default value: ".diz,.ion"
 ****
 
 * SUBSTITUTE_BREAK
 
 ****
-Whether or not stop rendering input files when the substitute (SUB) character is encountered. Default value : '1' (*ENABLED*)
+Whether or not stop rendering input files when the substitute (SUB) character is encountered. Default value: '1' (*ENABLED*)
 ****
 
 * WRAP_COLUMN_80
 
 ****
-Whether or not enable 80th column wrapping. Default value : '1' (*ENABLED*)
+Whether or not enable 80th column wrapping. Default value: '1' (*ENABLED*)
 ****
 
 * CED_BACKGROUND_COLOR
@@ -147,37 +147,37 @@ Defines RGB values of the WorkBench mode colors.
 * THUMBNAILS_SIZE
 
 ****
-Defines thumbnails size multiplicator. Default value : '1' (will produce 80 pixels width output)
+Defines thumbnails size multiplicator. Default value: '1' (will produce 80 pixels width output)
 ****
 
 * THUMBNAILS_HEIGHT
 
 ****
-Defines maximum thumbnails height (in pixels). Default value : '0' (will produce full height output)
+Defines maximum thumbnails height (in pixels). Default value: '0' (will produce full height output)
 ****
 
 * THUMBNAILS_TAG
 
 ****
-Defines the tag added to the output file name. Default value : '-thumbnail'
+Defines the tag added to the output file name. Default value: '-thumbnail'
 ****
 
 * SPLIT
 
 ****
-Whether or not split output in multiple images files. Default value : '0' (*DISABLED*)
+Whether or not split output in multiple images files. Default value: '0' (*DISABLED*)
 ****
 
 * SPLIT_HEIGHT
 
 ****
-Define the height (in pixels) of each splitted pictures. Default value : '4096'
+Define the height (in pixels) of each splitted pictures. Default value: '4096'
 ****
 
 * SPLIT_SEPARATOR
 
 ****
-Defines the separator used in output file names. Default value : '.'
+Defines the separator used in output file names. Default value: '.'
 ****
 
 Supported options for each file format
@@ -199,7 +199,7 @@ XB,,,,
 Command line converter
 ----------------------
 
-The command line converter can be invoked by typing : 
+The command line converter can be invoked by typing:
 
 ----
 ./ansilove
@@ -207,7 +207,7 @@ The command line converter can be invoked by typing :
 
 NOTE: Windows users should use the bundled 'ansilove.bat' file.
 
-CAUTION: Check the file header to ensure the path of your PHP interpreter is correct : Ansilove uses /usr/bin/php as default.
+CAUTION: Check the file header to ensure the path of your PHP interpreter is correct: Ansilove uses /usr/bin/php as default.
 
 Usage
 ~~~~~
@@ -216,7 +216,7 @@ Usage
 ansilove inputfile columns font bits icecolors
 ----
 
-NOTE: If no options are specified, default settings are used : 80x25, 8-bit font and iCE colors turned off. If no columns are specified for .BIN, default value is 160.
+NOTE: If no options are specified, default settings are used: 80x25, 8-bit font and iCE colors turned off. If no columns are specified for .BIN, default value is 160.
 
 
 Columns options
@@ -249,7 +249,7 @@ Amiga fonts options
 - topaz500+ (Modified Topaz Kickstart 1.x version)
 - topaz500plus (alias to Topaz500+ to be used in URLs)
 
-NOTE: All the amiga fonts come from the excellent http://www.trueschool.se/files/fonts/t!s-af10.zip[Amiga bitmap fonts] package by dMG.
+NOTE: All the amiga fonts come from the excellent https://www.trueschool.se/files/fonts/t!s-af10.zip[Amiga bitmap fonts] package by dMG.
 
 PC fonts options
 ^^^^^^^^^^^^^^^^
@@ -373,14 +373,14 @@ ansilove xbin.xb
 ansilove xbin.xb thumbnail (thumbnail rendering)
 ----
 
-IMPORTANT: Files with a .DIZ extension are rendered with the exact needed number of columns. White spaces and empty lines at the beginning and end of DIZ files are stripped from the output. 
+IMPORTANT: Files with a .DIZ extension are rendered with the exact needed number of columns. White spaces and empty lines at the beginning and end of DIZ files are stripped from the output.
 
-NOTE: You can customize file extensions definitions in the configuration fileby modifying the predefined constant called 'DIZ_EXTENSIONS' 
+NOTE: You can customize file extensions definitions in the configuration fileby modifying the predefined constant called 'DIZ_EXTENSIONS'
 
 Library usage for doing on the fly conversions on web pages
 -----------------------------------------------------------
 
-Using Ansilove library for doing "on the fly" conversions on Web pages, can be done using these loaders :
+Using Ansilove library for doing "on the fly" conversions on Web pages, can be done using these loaders:
 
 - load_ansi.php
 - load_pcboard.php
@@ -466,7 +466,7 @@ NOTE: If you want your HTML code to validate correctly, you should replace the '
 Library usage
 -------------
 
-It is also possible to use the library in your PHP applications or scripts :
+It is also possible to use the library in your PHP applications or scripts:
 
 Loading 'ansilove.php' library in your PHP source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -509,7 +509,7 @@ load_xbin($input,$output);
 Retrieve SAUCE Informations
 ---------------------------
 
-Retrieving SAUCE informations from files can be done using the 'load_sauce' function :
+Retrieving SAUCE informations from files can be done using the 'load_sauce' function:
 
 Loading 'ansilove.php' library in your PHP source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -525,7 +525,7 @@ Loading sauce informations
 $sauce=load_sauce($input_file_name);
 ----
 
-The 'load_sauce' function will return an array containing the SAUCE informations :
+The 'load_sauce' function will return an array containing the SAUCE informations:
 
 ----
 Array
@@ -552,7 +552,7 @@ Array
 )
 ----
 
-NOTE: You can find detailed informations about SAUCE (including full specifications) here : http://www.acid.org/info/sauce/sauce.htm
+NOTE: You can find detailed informations about SAUCE (including full specifications) here: http://www.acid.org/info/sauce/sauce.htm
 
 License
 -------
@@ -589,13 +589,13 @@ POSSIBILITY OF SUCH DAMAGE.
 Distribution
 ------------
 
-If you want to add an Ansilove download link on your page, please use the following download link :
+If you want to add an Ansilove download link on your page, please use the following download link:
 
 ----
 https://www.ansilove.org/downloads.html
 ----
 
-Ansilove is now also available on GitHub :
+Ansilove is now also available on GitHub:
 
 ----
 https://github.com/ansilove/ansilove-php
@@ -609,7 +609,7 @@ Ansilove is the result of countless hours of coding and testing, in order to pro
 Author
 ------
 
-Ansilove is developed by Frederic Cambus
+Ansilove is developed by Frederic Cambus.
 
 Site: https://www.cambus.net
 
@@ -622,7 +622,7 @@ Project Homepage: https://www.ansilove.org
 
 Sister project: https://www.ascii-codes.com
 
-For bug report, feedback, or any other reasons, please write at the following address :
+For bug report, feedback, or any other reasons, please write at the following address:
 ----
 Frederic Cambus <fred AT statdns DOT com>
 ----

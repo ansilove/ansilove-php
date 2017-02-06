@@ -26,11 +26,11 @@ use on web pages for doing "on the fly" conversions. It creates size optimized
 Extentions), 80x25 and 80x50 PC fonts (including all the 14 MS-DOS charsets
 and some unofficial ones), Amiga fonts, and iCE colors.
 
-It is written in PHP, and can thus be run on any supported system : the
+It is written in PHP, and can thus be run on any supported system: the
 command line converter can be used under Linux, Mac OS X, Windows, and so
 far and so on.
 
-Ansilove doesn’t require any Web server : you can use the bundled command
+Ansilove doesn’t require any Web server: you can use the bundled command
 line converter to convert files locally on your computer.
 
 ## Features
@@ -73,7 +73,7 @@ Ansilove is released under the BSD 2-Clause license. See `LICENSE` file for deta
 
 ## Author
 
-Ansilove is developed by Frederic Cambus
+Ansilove is developed by Frederic Cambus.
 
 - Site: https://www.cambus.net
 - Twitter: https://twitter.com/fcambus
