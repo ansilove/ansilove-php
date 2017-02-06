@@ -207,8 +207,6 @@ The command line converter can be invoked by typing:
 
 NOTE: Windows users should use the bundled 'ansilove.bat' file.
 
-CAUTION: Check the file header to ensure the path of your PHP interpreter is correct: Ansilove uses /usr/bin/php as default.
-
 Usage
 ~~~~~
 
