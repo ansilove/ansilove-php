@@ -1,7 +1,7 @@
 Ansilove
 ========
 :Author:    Frederic Cambus
-:Date:      2016-07-19
+:Date:      2017-02-06
 :Revision:  1.11
 
 Description
@@ -560,7 +560,7 @@ License
 Ansilove is released under the BSD 2-Clause license. See 'LICENSE' file for details.
 
 ----
-Copyright (c) 2003-2016, Frederic Cambus
+Copyright (c) 2003-2017, Frederic Cambus
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

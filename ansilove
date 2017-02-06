@@ -6,11 +6,11 @@
 /* \___\__|__|\___|_____/___|____/____/\___/\____/plur                       */
 /*                                                                           */
 /* Ansilove/PHP 1.11                                                         */
-/* Copyright (c) 2003-2016, Frederic Cambus                                  */
+/* Copyright (c) 2003-2017, Frederic Cambus                                  */
 /* https://www.ansilove.org                                                  */
 /*                                                                           */
 /* Created:      2003-07-17                                                  */
-/* Last Updated: 2016-07-19                                                  */
+/* Last Updated: 2017-02-06                                                  */
 /*                                                                           */
 /* Ansilove is released under the BSD 2-Clause license.                      */
 /* See LICENSE file for details.                                             */
@@ -63,7 +63,7 @@ function show_usage()
 /* MAIN                                                                      */
 /*****************************************************************************/
 
-echo "-------------------------------------------------------------------------------\n              AnsiLove/PHP 1.11 (c) by Frederic Cambus 2003-2015\n-------------------------------------------------------------------------------\n\n";
+echo "-------------------------------------------------------------------------------\n              AnsiLove/PHP 1.11 (c) by Frederic Cambus 2003-2017\n-------------------------------------------------------------------------------\n\n";
 
 if (!require_once(dirname(__FILE__).'/ansilove.php'))
 {
