@@ -23,7 +23,7 @@ Features
 - BiNARY (.BIN) format support
 - ADF (.ADF) format support (Artworx)
 - iDF (.IDF) format support (iCE Draw)
-- TUNDRA (.TND) format support - http://tundradraw.sourceforge.net
+- TUNDRA (.TND) format support - https://sourceforge.net/projects/tundradraw/
 - XBiN (.XB) format support - http://www.acid.org/info/xbin/xbin.htm
 - Small output file size (4-bit PNG)
 - SAUCE (Standard Architecture for Universal Comment Extentions)
@@ -67,7 +67,7 @@ Using tarballs
 ~~~~~~~~~~~~~~
 
 ----
-wget http://www.ansilove.org/files/ansilove-php-1.11.tar.gz
+wget https://www.ansilove.org/files/ansilove-php-1.11.tar.gz
 tar xvfz ansilove-php-1.11.tar.gz
 ----
 
@@ -592,7 +592,7 @@ Distribution
 If you want to add an Ansilove download link on your page, please use the following download link :
 
 ----
-http://www.ansilove.org/downloads.html
+https://www.ansilove.org/downloads.html
 ----
 
 Ansilove is now also available on GitHub :
@@ -611,16 +611,16 @@ Author
 
 Ansilove is developed by Frederic Cambus
 
-Site : http://www.cambus.net
+Site: https://www.cambus.net
 
-Twitter : http://twitter.com/fcambus
+Twitter: https://twitter.com/fcambus
 
 Contact
 -------
 
-Project Homepage : http://www.ansilove.org
+Project Homepage: https://www.ansilove.org
 
-Sister project : http://www.ascii-codes.com
+Sister project: https://www.ascii-codes.com
 
 For bug report, feedback, or any other reasons, please write at the following address :
 ----

@@ -6,7 +6,7 @@
 /*                                                                           */
 /* Ansilove/PHP 1.11                                                         */
 /* Copyright (c) 2003-2016, Frederic Cambus                                  */
-/* http://www.ansilove.org                                                   */
+/* https://www.ansilove.org                                                  */
 /*                                                                           */
 /* Created:      2003-07-17                                                  */
 /* Last Updated: 2016-07-19                                                  */

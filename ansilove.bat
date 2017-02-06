@@ -7,7 +7,7 @@ rem /* \___\__|__|\___|_____/___|____/____/\___/\____/plur                   */
 rem /*                                                                       */
 rem /* Ansilove/PHP 1.11                                                     */
 rem /* Copyright (c) 2003-2016, Frederic Cambus                              */
-rem /* http://www.ansilove.org                                               */
+rem /* https://www.ansilove.org                                              */
 rem /*                                                                       */
 rem /* Created:      2003-07-17                                              */
 rem /* Last Updated: 2016-07-19                                              */

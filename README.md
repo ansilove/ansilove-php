@@ -75,11 +75,11 @@ Ansilove is released under the BSD 2-Clause license. See `LICENSE` file for deta
 
 Ansilove is developed by Frederic Cambus
 
-- Site : http://www.cambus.net
-- Twitter: http://twitter.com/fcambus
+- Site: https://www.cambus.net
+- Twitter: https://twitter.com/fcambus
 
 ## Resources
 
-Project Homepage : http://www.ansilove.org
+Project Homepage: https://www.ansilove.org
 
-Sister project : http://www.ascii-codes.com
+Sister project: https://www.ascii-codes.com
