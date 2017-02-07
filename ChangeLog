@@ -9,7 +9,7 @@
 
 Ansilove/PHP 1.11 (2013-03-26)
 
-- Fixed a bug in the TUNDRA renderer 
+- Fixed a bug in the TUNDRA renderer
 - Fixed inconsistency when using Amiga fonts: bold characters are now
   displayed only in CED and WorkBench modes
 - Removing PHP warning about date.timezone settings when logging errors
@@ -26,7 +26,7 @@ Ansilove/PHP 1.10 (2012-10-08)
   in HTML and PDF)
 - Using proper bitshift instead of pow for ADF / IDF / XBIN font processing
 - Skipping 'Set mode' and 'Reset mode' sequences to correctly render files
-  saved with recent versions of PabloDraw 
+  saved with recent versions of PabloDraw
 
 
 

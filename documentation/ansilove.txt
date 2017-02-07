@@ -78,7 +78,7 @@ Using Git
 git clone git@github.com:ansilove/ansilove-php.git
 ----
 
-IMPORTANT: Under Windows people must install the PHP binaries: the easiest way is to use the '.exe' installer and enable the GD library. 
+IMPORTANT: Under Windows people must install the PHP binaries: the easiest way is to use the '.exe' installer and enable the GD library.
 
 Configuration options
 ----------------------

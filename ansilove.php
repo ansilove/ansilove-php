@@ -937,7 +937,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
             imagecopy($ansi,$font,$position_x*$bits,$position_y*$font_size_y+10,$character*$font_size_x,$color_foreground*$font_size_y+10,$bits,4);
             imagecopy($ansi,$font,$position_x*$bits-1,$position_y*$font_size_y+14,$character*$font_size_x,$color_foreground*$font_size_y+14,$bits,2);
          }
-            
+
          if ($italics && $bold)
          {
             imagecopy($ansi,$font,$position_x*$bits+3+1,$position_y*$font_size_y,$character*$font_size_x,$color_foreground*$font_size_y,$bits,2);
@@ -979,7 +979,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
                {
                   $loop_column++;
                }
-               
+
                $loop_column++;
             }
 
@@ -1090,7 +1090,7 @@ function load_ansi($input,$output,$font,$bits,$icecolors)
    imagedestroy($ansi);
    imagedestroy($background);
    imagedestroy($font);
-   
+
    return $output_files;
 }
 
@@ -1327,7 +1327,7 @@ function load_pcboard($input,$output,$font,$bits)
             $position_x=(10*(ord($input_file_buffer[$loop+5])-48)+ord($input_file_buffer[$loop+6])-48)-1;
             $loop+=6;
          }
-      }     
+      }
       elseif ($current_character!=10 && $current_character!=13 && $current_character!=9)
       {
 
