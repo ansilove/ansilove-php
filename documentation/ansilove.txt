@@ -1,13 +1,15 @@
 Ansilove
 ========
 :Author:    Frederic Cambus
-:Date:      2017-02-06
-:Revision:  1.11
+:Date:      2017-04-19
+:Revision:  1.12
 
 Description
 -----------
 
 *Ansilove* is a set of tools to convert ANSi and artscene-related file formats into *PNG* images, supporting *ANSi* (.ANS), *PCBOARD* (.PCB), *BiNARY* (.BIN), *ADF* (.ADF), *iDF* (.IDF), *TUNDRA* (.TND) and *XBiN* (.XB) formats.
+
+CAUTION: Ansilove/PHP is now deprecated, version 1.12 will be the last release. Users are encouraged to migrate to Ansilove/C which replaces the command line converter, and to Ansilove.js for doing "on the fly" conversions on web pages.
 
 It includes an all purposes *command line converter*, along with a *library* to use on web pages for doing *"on the fly"* conversions. It creates size optimized *4-bit PNG* files and supports *SAUCE* (Standard Architecture for Universal Comment Extentions), 80x25 and 80x50 PC fonts (including all the 14 *MS-DOS charsets* and some unofficial ones), Amiga fonts, and iCE colors.
 
@@ -67,8 +69,8 @@ Using tarballs
 ~~~~~~~~~~~~~~
 
 ----
-wget https://www.ansilove.org/files/ansilove-php-1.11.tar.gz
-tar xvfz ansilove-php-1.11.tar.gz
+wget https://www.ansilove.org/files/ansilove-php-1.12.tar.gz
+tar xvfz ansilove-php-1.12.tar.gz
 ----
 
 Using Git
