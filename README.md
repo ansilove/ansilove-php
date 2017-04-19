@@ -3,7 +3,7 @@
 	      /    \|     \/  _ \    /--\_____    \\   /  /\          /  \
 	    _/      |     /    \     \      |/     /      \ \ _ _____/    \_______
 	    \       |_____\____/     /      /      \____  /\/                    /
-	     \______|      \  \_____/\______       /\   \/  \   /\NSILOVE 1.11  /____ _
+	     \______|      \  \_____/\______       /\   \/  \   /\NSILOVE 1.12  /____ _
 	      \     |_______\__\___ \ \    \      /  \___\__/____
 	       \____|        /____/\_\/\__ /     / __/___ \     /\    ____
 	                     \    \ \     /     /_/ __   \/    /__\__/  _/ _____ ___
@@ -19,6 +19,13 @@
 Ansilove is a set of tools to convert ANSi and artscene-related file formats
 into PNG images, supporting ANSi (.ANS), PCBOARD (.PCB), BiNARY (.BIN), ADF
 (.ADF), iDF (.IDF), TUNDRA (.TND) and XBiN (.XB) formats.
+
+```
+Ansilove/PHP is now deprecated, version 1.12 will be the last release.
+
+Users are encouraged to migrate to Ansilove/C which replaces the command line
+converter, and to Ansilove.js for doing "on the fly" conversions on web pages.
+```
 
 It includes an all purposes command line converter, along with a library to
 use on web pages for doing "on the fly" conversions. It creates size optimized
@@ -69,7 +76,8 @@ line converter to convert files locally on your computer.
 
 ## License
 
-Ansilove is released under the BSD 2-Clause license. See `LICENSE` file for details.
+Ansilove is released under the BSD 2-Clause license. See `LICENSE` file for
+details.
 
 ## Author
 
