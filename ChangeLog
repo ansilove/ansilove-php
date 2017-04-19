@@ -7,7 +7,21 @@
           |______/    _ __ __________ \/ _______ \/ ________ __ _  yop \/
 
 
-Ansilove/PHP 1.11 (2013-03-26)
+Ansilove/PHP 1.12 (2017-04-19)
+
+- Adding a new example ANSi (Thanks Otium)
+- Adding a new example ASCii (Thanks Konami)
+- Adding a new example ANSi (Thanks Andy Herbert)
+- Adding a new example ANSi (Thanks TCF)
+- Adding a new example XBin (Thanks Enzo)
+- Relicensed under the BSD 2-Clause license
+- Use env to find PHP
+- Switch examples pages to HTML5
+- Add deprecation notices
+
+
+
+Ansilove/PHP 1.11 (2014-03-26)
 
 - Fixed a bug in the TUNDRA renderer
 - Fixed inconsistency when using Amiga fonts: bold characters are now
